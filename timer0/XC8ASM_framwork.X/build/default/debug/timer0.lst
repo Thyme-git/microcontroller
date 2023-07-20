@@ -1,0 +1,113 @@
+
+
+Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
+                                                                                                           Wed Jul 12 00:13:25 2023
+
+
+     1                           	processor	16F18854
+     2                           	pagewidth 132
+     3                           	psect	udata_shr,global,class=COMMON,space=1,delta=1,noexec
+     4                           	psect	udata,global,class=RAM,space=1,delta=1,noexec
+     5                           	psect	udata_bank0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	udata_bank1,global,class=BANK1,space=1,delta=1,noexec
+     7                           	psect	udata_bank2,global,class=BANK2,space=1,delta=1,noexec
+     8                           	psect	udata_bank3,global,class=BANK3,space=1,delta=1,noexec
+     9                           	psect	udata_bank4,global,class=BANK4,space=1,delta=1,noexec
+    10                           	psect	udata_bank5,global,class=BANK5,space=1,delta=1,noexec
+    11                           	psect	udata_bank6,global,class=BANK6,space=1,delta=1,noexec
+    12                           	psect	code,global,class=CODE,delta=2
+    13                           	psect	data,global,class=STRCODE,delta=2,noexec
+    14                           	psect	edata,global,class=EEDATA,space=3,delta=2,noexec
+    15                           	psect	init,global,class=CODE,delta=2
+    16                           	psect	end_init,global,class=CODE,delta=2
+    17                           	psect	powerup,global,class=CODE,delta=2
+    18                           	psect	cinit,global,class=CODE,delta=2
+    19                           	psect	functab,global,class=ENTRY,delta=2
+    20                           	psect	idloc,global,class=IDLOC,delta=2,noexec
+    21                           	psect	eeprom_data,global,class=EEDATA,space=3,delta=2,noexec
+    22                           	psect	intentry,global,class=CODE,delta=2
+    23                           	psect	reset_vec,global,class=CODE,delta=2
+    24                           	psect	config,global,class=CONFIG,delta=2
+    25                           	psect	CommonVar,global,class=COMMON,space=1,delta=1
+    26                           	psect	main,global,class=CODE,delta=2
+    27                           	psect	pa_nodes0,global,class=CODE,delta=2
+    28     007F                     
+    29                           	psect	edata
+    30     0000                     stk_offset	set	0
+    31     0000                     auto_size	set	0
+    32                           
+    33                           ; stack_auto defines a symbol /name/_offset which equates to the
+    34                           ; stack offset of the auto object in question
+    35     0000                     
+    36                           ; stack_param defines a symbol /name/_offset which equates to the
+    37                           ; stack offset of the parameter object in question
+    38     0000                     
+    39                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    40                           ; it also links in to the btemp symbol so that can be used
+    41     0000                     
+    42                           ; restore_stack adjusts the SP to remove all auto and parameter
+    43                           ; objects from the stack prior to returning from a function
+    44     0000                     
+    45                           	psect	cinit
+    46     0000                     start_initialization:
+    47                           
+    48                           	psect	intentry
+    49     0004  0009               	retfie	; PIC10/12/16
+    50                           
+    51                           	psect	reset_vec
+    52     0000                     reset_vec:
+    53     0000  3180  2805  3180   	ljmp	_main
+    54                           
+    55                           	psect	config
+    56     8007  DFEC               	dw	57324
+    57     8008  F7FF               	dw	63487
+    58     8009  FFBF               	dw	65471
+    59     800A  EFFE               	dw	61438
+    60     800B  FFFF               	dw	65535
+    61                           
+    62                           	psect	CommonVar
+    63     0070                     charcase:
+    64     0070                     	ds	1
+    65                           
+    66                           	psect	main
+    67     0005                     _main:
+    68     0005  0020               	banksel	17
+    69     0006  1011               	bcf	17,0	;PORTA[0] as output
+    70                           
+    71                           ;TIMER0 config
+    72     0007  0020               	banksel	30
+    73     0008  3090               	movlw	144	;16-bit mode
+    74     0009  009E               	movwf	30
+    75     000A  0020               	banksel	31
+    76     000B  3053               	movlw	83	;
+    77     000C  009F               	movwf	31
+    78     000D                     start:
+    79     000D  0020               	banksel	22
+    80     000E  0916               	comf	22,w
+    81                           
+    82                           ; 2**16 - 2**14 = 0xc0 00
+    83     000F  0020               	banksel	29
+    84     0010  300B               	movlw	11
+    85     0011  009D               	movwf	29
+    86     0012  0020               	banksel	28
+    87     0013  30DE               	movlw	222
+    88     0014  009C               	movwf	28
+    89     0015  002E               	banksel	1804
+    90     0016  0000               	nop
+    91     0017                     loop:
+    92     0017  1E8C               	btfss	1804,5
+    93     0018  2817               	goto	loop
+    94     0019  0000               	nop
+    95     001A  128C               	bcf	1804,5
+    96     001B  0000               	nop
+    97     001C  280D               	goto	start
+
+
+Microchip Technology PIC Macro Assembler V2.41 build 20230208172133 
+Symbol Table                                                                                               Wed Jul 12 00:13:25 2023
+
+                            LATA 0016                              PIR0 070C                              loop 0017  
+                           TMR0H 001D                             TMR0L 001C                             TRISA 0011  
+                           _main 0005                             start 000D                            T0CON0 001E  
+                          T0CON1 001F                           LOWBYTE 00DE                          HIGHBYTE 000B  
+                        charcase 0070              start_initialization 0000                         reset_vec 0000  

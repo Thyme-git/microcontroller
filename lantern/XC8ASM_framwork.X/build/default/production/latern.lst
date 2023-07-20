@@ -1,0 +1,258 @@
+
+
+Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
+                                                                                                           Fri Jul 14 10:14:40 2023
+
+
+     1                           	processor	16F18854
+     2                           	pagewidth 132
+     3                           	psect	udata_shr,global,class=COMMON,space=1,delta=1,noexec
+     4                           	psect	udata,global,class=RAM,space=1,delta=1,noexec
+     5                           	psect	udata_bank0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	udata_bank1,global,class=BANK1,space=1,delta=1,noexec
+     7                           	psect	udata_bank2,global,class=BANK2,space=1,delta=1,noexec
+     8                           	psect	udata_bank3,global,class=BANK3,space=1,delta=1,noexec
+     9                           	psect	udata_bank4,global,class=BANK4,space=1,delta=1,noexec
+    10                           	psect	udata_bank5,global,class=BANK5,space=1,delta=1,noexec
+    11                           	psect	udata_bank6,global,class=BANK6,space=1,delta=1,noexec
+    12                           	psect	code,global,class=CODE,delta=2
+    13                           	psect	data,global,class=STRCODE,delta=2,noexec
+    14                           	psect	edata,global,class=EEDATA,space=3,delta=2,noexec
+    15                           	psect	init,global,class=CODE,delta=2
+    16                           	psect	end_init,global,class=CODE,delta=2
+    17                           	psect	powerup,global,class=CODE,delta=2
+    18                           	psect	cinit,global,class=CODE,delta=2
+    19                           	psect	functab,global,class=ENTRY,delta=2
+    20                           	psect	idloc,global,class=IDLOC,delta=2,noexec
+    21                           	psect	eeprom_data,global,class=EEDATA,space=3,delta=2,noexec
+    22                           	psect	intentry,global,class=CODE,delta=2
+    23                           	psect	reset_vec,global,class=CODE,delta=2
+    24                           	psect	config,global,class=CONFIG,delta=2
+    25                           	psect	CommonVar,global,class=COMMON,space=1,delta=1
+    26                           	psect	main,global,class=CODE,delta=2
+    27                           	psect	pa_nodes0,global,class=CODE,delta=2
+    28     007F                     
+    29                           	psect	edata
+    30     0000                     stk_offset	set	0
+    31     0000                     auto_size	set	0
+    32                           
+    33                           ; stack_auto defines a symbol /name/_offset which equates to the
+    34                           ; stack offset of the auto object in question
+    35     0000                     
+    36                           ; stack_param defines a symbol /name/_offset which equates to the
+    37                           ; stack offset of the parameter object in question
+    38     0000                     
+    39                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    40                           ; it also links in to the btemp symbol so that can be used
+    41     0000                     
+    42                           ; restore_stack adjusts the SP to remove all auto and parameter
+    43                           ; objects from the stack prior to returning from a function
+    44     0000                     
+    45                           	psect	cinit
+    46     0000                     start_initialization:
+    47                           
+    48                           	psect	intentry
+    49                           
+    50                           ; (index+1)
+    51     0004  204E               	call	seg_display_func
+    52     0005  30FB               	movlw	251
+    53     0006  002E               	banksel	1804
+    54     0007  128C               	bcf	1804,5	; clear timer0 interupt bit
+    55                           
+    56                           ; reset counter
+    57     0008  0020               	banksel	29
+    58     0009  009D               	movwf	29
+    59     000A  30FF               	movlw	255
+    60     000B  0020               	banksel	28
+    61     000C  009C               	movwf	28
+    62     000D  0009               	retfie	; PIC10/12/16
+    63                           
+    64                           	psect	reset_vec
+    65     0000                     reset_vec:
+    66     0000  3180  280E  3180   	ljmp	_main
+    67                           
+    68                           	psect	config
+    69     8007  DFEC               	dw	57324
+    70     8008  F7FF               	dw	63487
+    71     8009  FFBF               	dw	65471
+    72     800A  EFFE               	dw	61438
+    73     800B  FFFF               	dw	65535
+    74                           
+    75                           	psect	CommonVar
+    76     0070                     seg_buffer:
+    77     0070                     	ds	4	; encoded number for display at 0xf0
+    78     0074                     seg_idx:
+    79     0074                     	ds	1	; index for seg_buffer at 0xf4
+    80     0075                     seg_select:
+    81     0075                     	ds	4	; at 0xf5 TODO constant value can be put into a table
+    82     0079                     number:
+    83     0079                     	ds	4	; at 0xfa
+    84     007D                     cnt:
+    85     007D                     	ds	1	; for test
+    86     007E                     w_tmp:
+    87     007E                     	ds	1	; for test
+    88     007F                     seg_flash:
+    89     007F                     	ds	1	; 0000 0001 means that flash seg0
+    90                           
+    91                           	psect	main
+    92     000E                     _main:
+    93                           
+    94                           ;write code here
+    95                           ; initialize
+    96     000E  0020               	banksel	18
+    97     000F  0192               	clrf	18	; port b as output
+    98     0010  0020               	banksel	19
+    99     0011  0193               	clrf	19	; port c as negtive pole
+   100                           
+   101                           ; interupt config
+   102     0012  0020               	banksel	11
+   103     0013  178B               	bsf	11,7	;enable general interupt
+   104     0014  002E               	banksel	1814
+   105     0015  1696               	bsf	22,5	; enable Timer0 interupt
+   106                           
+   107                           ;TIMER0 config
+   108     0016  0020               	banksel	30
+   109     0017  3090               	movlw	144	;16-bit mode
+   110     0018  009E               	movwf	30
+   111     0019  0020               	banksel	31
+   112     001A  3050               	movlw	80	;use FOSC/4 as input: prescale 1:1
+   113     001B  009F               	movwf	31
+   114     001C  0020               	banksel	24
+   115     001D  0198               	clrf	24
+   116     001E  0998               	comf	24,f
+   117     001F  3001               	movlw	1
+   118     0020  00F9               	movwf	number
+   119     0021  3002               	movlw	2
+   120     0022  00FA               	movwf	number+1
+   121     0023  3003               	movlw	3
+   122     0024  00FB               	movwf	number+2
+   123     0025  3004               	movlw	4
+   124     0026  00FC               	movwf	number+3
+   125     0027  30FD               	movlw	253
+   126     0028  00F5               	movwf	seg_select
+   127     0029  30FB               	movlw	251
+   128     002A  00F6               	movwf	seg_select+1
+   129     002B  30F7               	movlw	247
+   130     002C  00F7               	movwf	seg_select+2
+   131     002D  30EF               	movlw	239
+   132     002E  00F8               	movwf	seg_select+3
+   133     002F  300A               	movlw	10
+   134     0030  00FF               	movwf	seg_flash
+   135     0031                     main_loop:
+   136     0031  3079               	movlw	number	; store base address of numbers to w
+   137     0032  077D               	addwf	cnt,w
+   138     0033  0084               	movwf	4	; store real address of number[cnt] to w
+   139                           
+   140                           ; INDF0 = FSR0->content
+   141     0034  0A80               	incf	0,f	; number[cnt]++
+   142     0035  0800               	movf	0,w
+   143     0036  2072               	call	mod_10_func	;w = w % 10
+   144     0037  0080               	movwf	0	; number[cnt] = (number[cnt])%10
+   145     0038  2067               	call	_table_encoded	; encode(number[cnt]) -> w
+   146     0039  00FE               	movwf	w_tmp	; encode(number[cnt]) -> w_tmp
+   147     003A  3070               	movlw	seg_buffer	; store base address of seg_buffers to w
+   148     003B  077D               	addwf	cnt,w
+   149     003C  0084               	movwf	4	;addr(seg_buffer[cnt]) -> FSR0L
+   150     003D  087E               	movf	w_tmp,w	;
+   151     003E  0080               	movwf	0	;encode(number0[cnt]) -> seg_buffer[cnt]
+   152     003F  0AFD               	incf	cnt,f
+   153     0040  3003               	movlw	3
+   154     0041  05FD               	andwf	cnt,f	; cnt = cnt % 4
+   155     0042  1903               	btfsc	3,2	; skip if cnt == 0
+   156     0043  2046               	call	delay
+   157     0044  2831               	goto	main_loop
+   158     0045  2879               	goto	_exit
+   159     0046                     delay:
+   160     0046  308F               	movlw	143
+   161     0047  00FE               	movwf	w_tmp
+   162     0048                     delay_loop:
+   163     0048  30FF               	movlw	255
+   164     0049                     loop_delay:
+   165     0049  0B09               	decfsz	9,w
+   166     004A  2849               	goto	loop_delay
+   167     004B  0BFE               	decfsz	w_tmp,f
+   168     004C  2848               	goto	delay_loop
+   169     004D  0008               	return
+   170     004E                     seg_display_func:
+   171                           
+   172                           ;display seg_buffer[seg_idx%4] in segment
+   173     004E  03F4               	decf	seg_idx,f
+   174                           
+   175                           ; disable negtive pole before write postive pole,
+   176                           ; ortherwise there will be blurry light leaving in segment
+   177     004F  0020               	banksel	24
+   178     0050  0198               	clrf	24
+   179     0051  0998               	comf	24,f
+   180                           
+   181                           ; write postive pole
+   182     0052  0874               	movf	seg_idx,w	; w <- seg_idx (range from 0 to 255)
+   183     0053  3903               	andlw	3	; w <- seg_idx % 4
+   184     0054  3E70               	addlw	seg_buffer	; w <- seg_buffer + seg_idx % 4
+   185     0055  0084               	movwf	4	; FSR0L <- seg_buffer + seg_idx % 4
+   186     0056  0020               	banksel	23
+   187     0057  0800               	movf	0,w	; w <- seg_buffer[seg_idx%4]
+   188     0058  0097               	movwf	23	; w -> LATB
+   189                           
+   190                           ; write negtive pole
+   191     0059  0874               	movf	seg_idx,w	; w <- seg_idx (range from 0 to 255)
+   192     005A  3903               	andlw	3	; w <- seg_idx % 4
+   193     005B  3E75               	addlw	seg_select	;w <- seg_select + seg_idx % 4
+   194     005C  0084               	movwf	4	; FSR0L <- seg_select + seg_idx % 4
+   195     005D  0020               	banksel	24
+   196     005E  0800               	movf	0,w	; w <- seg_select[seg_idx%4]
+   197     005F  0098               	movwf	24	; LATC <- seg_select[seg_idx%4]
+   198     0060  087F               	movf	seg_flash,w
+   199     0061  1BF4               	btfsc	seg_idx,7
+   200     0062  0498               	iorwf	24,f	; flash, if seg_flash[i] == 1, then LATC[i] will be set as 1
+   201     0063  0008               	return
+   202     0064                     _dim_all:
+   203                           
+   204                           ; clrf LATC
+   205     0064  087F               	movf	seg_flash,w
+   206                           
+   207                           ; comf LATC, f
+   208     0065  0498               	iorwf	24,f
+   209     0066  0008               	return
+   210     0067                     _table_encoded:
+   211     0067  0782               	addwf	2,f	;add offset to pc to
+   212                           
+   213                           ;generate a computed goto
+   214     0068  34EB               	retlw	235	; 0
+   215     0069  3428               	retlw	40	; 1
+   216     006A  34B3               	retlw	179	; 2
+   217     006B  34BA               	retlw	186	; 3
+   218     006C  3478               	retlw	120	; 4
+   219     006D  34DA               	retlw	218	; 5
+   220     006E  34DB               	retlw	219	; 6
+   221     006F  34A8               	retlw	168	; 7
+   222     0070  34FB               	retlw	251	; 8
+   223     0071  34FA               	retlw	250	; 9
+   224     0072                     mod_10_func:
+   225                           
+   226                           ; input value in wreg, return value is in wreg
+   227     0072  00FE               	movwf	w_tmp
+   228     0073  300A               	movlw	10
+   229     0074                     mod_loop:
+   230     0074  02FE               	subwf	w_tmp,f
+   231     0075  1803               	btfsc	3,0
+   232     0076  2874               	goto	mod_loop
+   233     0077  077E               	addwf	w_tmp,w
+   234     0078  0008               	return
+   235     0079                     _exit:
+
+
+Microchip Technology PIC Macro Assembler V2.41 build 20230208172133 
+Symbol Table                                                                                               Fri Jul 14 10:14:40 2023
+
+                             PCL 0002                               cnt 007D                              LATB 0017  
+                            LATC 0018                              PIE0 0716                              PIR0 070C  
+                            WREG 0009                             INDF0 0000                             FSR0L 0004  
+                           TMR0H 001D                             TMR0L 001C                             TRISB 0012  
+                           TRISC 0013                             _main 000E                             _exit 0079  
+                           delay 0046                             w_tmp 007E                            T0CON0 001E  
+                          T0CON1 001F                            INTCON 000B                            STATUS 0003  
+                seg_display_func 004E                            number 0079                           seg_idx 0074  
+                        _dim_all 0064                    _table_encoded 0067                          mod_loop 0074  
+                     mod_10_func 0072              start_initialization 0000                        delay_loop 0048  
+                      seg_buffer 0070                        seg_select 0075                        loop_delay 0049  
+                       main_loop 0031                         seg_flash 007F                         reset_vec 0000  

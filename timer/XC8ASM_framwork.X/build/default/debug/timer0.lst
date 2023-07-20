@@ -1,0 +1,46 @@
+
+
+Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
+                                                                                                           Sat Jul  8 17:54:26 2023
+
+
+     1                           	processor	16F18854
+     2                           	pagewidth 132
+     3                           	psect	pa_nodes0,global,class=CODE,delta=2
+     4  0000                     _main:
+     5                           
+     6                           ;TODO
+     7                           ;PORTA config
+     8  0000  0020'              	banksel	PORTA
+     9  0001  0180'              	clrf	PORTA
+    10  0002  0020'              	banksel	LATA
+    11  0003  0180'              	clrf	LATA
+    12  0004  0020'              	banksel	ANSELA
+    13  0005  0180'              	clrf	ANSELA
+    14  0006  0020'              	banksel	TRISA
+    15  0007  3000               	movlw	0
+    16  0008  0080'              	movwf	TRISA
+    17                           
+    18                           ;TIMER0 config
+    19  0009  0020'              	banksel	T0CON0
+    20  000A  3080               	movlw	128
+    21  000B  0080'              	movwf	T0CON0
+    22  000C  0020'              	banksel	T0CON1
+    23  000D  3096               	movlw	150
+    24  000E  0080'              	movwf	T0CON1
+    25  000F                     loop:
+    26  000F  0020'              	banksel	PIR0
+    27  0010  1E80'              	btfss	PIR0,5	; if PIR0[5] == 1, jump next line
+    28  0011  2800'              	goto	loop
+    29  0012  1280'              	bcf	PIR0,5	; set overflow flag 0
+    30  0013  0020'              	banksel	PORTA
+    31  0014  3001               	movlw	1
+    32  0015  0680'              	xorwf	PORTA,f
+    33  0016  2800'              	goto	loop
+
+
+Microchip Technology PIC Macro Assembler V2.41 build 20230208172133 
+Symbol Table                                                                                               Sat Jul  8 17:54:26 2023
+
+        LATA 0000*         PIR0 0000*         loop 000F         PORTA 0000*        TRISA 0000*        _main 0000  
+      ANSELA 0000*       T0CON0 0000*       T0CON1 0000* 

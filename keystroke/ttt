@@ -1,0 +1,43 @@
+; initialize
+r = 255;
+p = 0;
+in while loop:
+if (released)
+{
+    if (r == 64)
+    {
+        call single_pressed();
+    }
+    if (r > 3)
+    {
+        p = 0;
+    }
+    if (r == 255)
+    {
+        continue;
+    }
+    r ++;
+}else if (pressed)
+{
+    if (p == 200)
+    {
+        call long_pressed();
+        r = 65;
+    }
+    if (p == 2)
+    {
+        if (r < 64)
+        {
+            call double_pressed();
+            r = 65;
+            p = 201;
+            continue;
+        }
+        r = 0;
+    }
+    if (p == 255)
+    {
+        continue;
+    }
+    p++;
+}

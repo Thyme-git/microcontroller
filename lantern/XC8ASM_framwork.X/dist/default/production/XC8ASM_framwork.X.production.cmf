@@ -1,0 +1,332 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$build/default/production/latern.o
+main CODE 0 E E 6B 2 1
+intentry CODE 0 4 4 A 2 1
+reset_vec CODE 0 0 0 3 2 1
+CommonVar COMMON 1 70 70 10 1 1
+config CONFIG 0 8007 8007 5 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 20-6F 1
+RAM A0-EF 1
+RAM 120-16F 1
+RAM 1A0-1EF 1
+RAM 220-26F 1
+RAM 2A0-2EF 1
+RAM 320-32F 1
+BANK0 20-6F 1
+BANK1 A0-EF 1
+BANK2 120-16F 1
+BANK3 1A0-1EF 1
+BANK4 220-26F 1
+BANK5 2A0-2EF 1
+BANK6 320-32F 1
+CONST 3-3 2
+CONST 79-FFF 2
+ENTRY 3-3 2
+ENTRY 79-FFF 2
+IDLOC 8000-8003 2
+SFR10 500-56F 1
+SFR11 580-5EF 1
+SFR12 600-66F 1
+SFR13 680-6EF 1
+SFR14 700-76F 1
+SFR15 780-7EF 1
+SFR16 800-86F 1
+SFR17 880-8EF 1
+SFR18 900-96F 1
+SFR19 980-9EF 1
+SFR20 A00-A6F 1
+SFR21 A80-AEF 1
+SFR22 B00-B6F 1
+SFR23 B80-BEF 1
+SFR24 C00-C6F 1
+SFR25 C80-CEF 1
+SFR26 D00-D6F 1
+SFR27 D80-DEF 1
+SFR28 E00-E6F 1
+SFR29 E80-EEF 1
+SFR30 F00-F6F 1
+SFR31 F80-FEF 1
+CODE 3-3 2
+CODE 79-FFF 2
+SFR0 6-7 1
+SFR2 100-11F 1
+SFR3 180-19F 1
+SFR4 200-21F 1
+SFR5 280-29F 1
+SFR6 300-31F 1
+SFR7 380-3EF 1
+SFR8 400-46F 1
+SFR9 480-4EF 1
+BIGRAM 2000-21EF 1
+EEDATA F000-F0FF 2
+STRCODE 3-3 2
+STRCODE 79-FFF 2
+STRING 3-3 2
+STRING 79-FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$build/default/production/latern.o
+E main CODE >75:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+F main CODE >76:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+10 main CODE >78:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+11 main CODE >79:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+12 main CODE >82:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+13 main CODE >83:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+14 main CODE >85:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+15 main CODE >86:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+16 main CODE >89:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+17 main CODE >90:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+18 main CODE >91:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+19 main CODE >92:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+1A main CODE >93:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+1B main CODE >94:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+1C main CODE >96:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+1D main CODE >97:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+1E main CODE >98:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+1F main CODE >100:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+20 main CODE >101:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+21 main CODE >102:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+22 main CODE >103:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+23 main CODE >104:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+24 main CODE >105:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+25 main CODE >106:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+26 main CODE >107:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+27 main CODE >109:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+28 main CODE >110:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+29 main CODE >111:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+2A main CODE >112:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+2B main CODE >113:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+2C main CODE >114:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+2D main CODE >115:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+2E main CODE >116:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+2F main CODE >118:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+30 main CODE >119:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+31 main CODE >122:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+32 main CODE >123:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+33 main CODE >124:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+34 main CODE >127:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+35 main CODE >128:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+36 main CODE >129:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+37 main CODE >130:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+38 main CODE >131:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+39 main CODE >132:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+3A main CODE >134:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+3B main CODE >135:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+3C main CODE >136:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+3D main CODE >137:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+3E main CODE >138:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+3F main CODE >140:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+40 main CODE >141:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+41 main CODE >142:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+42 main CODE >144:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+43 main CODE >145:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+44 main CODE >146:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+45 main CODE >167:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+46 main CODE >170:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+47 main CODE >171:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+48 main CODE >173:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+49 main CODE >175:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+4A main CODE >176:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+4B main CODE >177:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+4C main CODE >178:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+4D main CODE >179:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+4E main CODE >182:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+4F main CODE >186:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+50 main CODE >187:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+51 main CODE >188:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+52 main CODE >191:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+53 main CODE >192:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+54 main CODE >193:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+55 main CODE >194:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+56 main CODE >195:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+57 main CODE >196:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+58 main CODE >197:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+59 main CODE >200:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+5A main CODE >201:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+5B main CODE >202:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+5C main CODE >203:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+5D main CODE >204:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+5E main CODE >205:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+5F main CODE >206:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+60 main CODE >208:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+61 main CODE >209:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+62 main CODE >210:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+63 main CODE >212:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+64 main CODE >216:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+65 main CODE >218:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+66 main CODE >219:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+67 main CODE >222:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+68 main CODE >224:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+69 main CODE >225:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+6A main CODE >226:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+6B main CODE >227:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+6C main CODE >228:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+6D main CODE >229:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+6E main CODE >230:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+6F main CODE >231:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+70 main CODE >232:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+71 main CODE >233:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+72 main CODE >236:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+73 main CODE >237:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+74 main CODE >239:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+75 main CODE >240:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+76 main CODE >241:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+77 main CODE >242:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+78 main CODE >243:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+8007 config CONFIG >29:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+8008 config CONFIG >30:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+8009 config CONFIG >31:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+800A config CONFIG >32:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+800B config CONFIG >33:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+0 reset_vec CODE >37:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+4 intentry CODE >55:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+5 intentry CODE >62:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+6 intentry CODE >57:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+7 intentry CODE >58:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+8 intentry CODE >61:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+9 intentry CODE >63:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+A intentry CODE >65:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+B intentry CODE >64:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+C intentry CODE >66:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+D intentry CODE >67:/home/thyme/study/Dian/seed-class/microcontroller/lantern/XC8ASM_framwork.X/latern.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Hspace_0 800C 0 ABS 0 - -
+__Hspace_1 80 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Hudata_bank0 0 0 ABS 0 udata_bank0 -
+__Hudata_bank1 0 0 ABS 0 udata_bank1 -
+__Hudata_bank2 0 0 ABS 0 udata_bank2 -
+__Hudata_bank3 0 0 ABS 0 udata_bank3 -
+__Hudata_bank4 0 0 ABS 0 udata_bank4 -
+__Hudata_bank5 0 0 ABS 0 udata_bank5 -
+__Hudata_bank6 0 0 ABS 0 udata_bank6 -
+__L__absolute__ 0 0 ABS 0 __absolute__ -
+_main 1C 0 CODE 0 main build/default/production/latern.o
+__Hpowerup 0 0 CODE 0 powerup -
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hpa_nodes0 0 0 ABS 0 pa_nodes0 -
+__Lpa_nodes0 0 0 ABS 0 pa_nodes0 -
+start_initialization 0 0 CODE 0 cinit build/default/production/latern.o
+__Hcinit 0 0 CODE 0 cinit -
+__Hedata 0 0 ABS 0 edata -
+__Hidloc 0 0 ABS 0 idloc -
+__Hudata 0 0 ABS 0 udata -
+__Hconfig 0 0 ABS 0 config -
+__Lcinit 0 0 CODE 0 cinit -
+__Ledata 0 0 ABS 0 edata -
+__Lidloc 0 0 ABS 0 idloc -
+__Ludata 0 0 ABS 0 udata -
+__Hcode 0 0 ABS 0 code -
+__Hdata 0 0 ABS 0 data -
+__Hinit 0 0 ABS 0 init -
+__Hmain 0 0 ABS 0 main -
+__Lcode 0 0 ABS 0 code -
+__Ldata 0 0 ABS 0 data -
+__Linit 0 0 ABS 0 init -
+__Lmain 0 0 ABS 0 main -
+__S0 800C 0 ABS 0 - -
+__S1 80 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec build/default/production/latern.o
+__Lconfig 0 0 ABS 0 config -
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lend_init 0 0 ABS 0 end_init -
+__Hintentry 1C 0 CODE 0 intentry -
+__Hreset_vec 6 0 CODE 0 reset_vec -
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Ludata_bank0 0 0 ABS 0 udata_bank0 -
+__Ludata_bank1 0 0 ABS 0 udata_bank1 -
+__Ludata_bank2 0 0 ABS 0 udata_bank2 -
+__Ludata_bank3 0 0 ABS 0 udata_bank3 -
+__Ludata_bank4 0 0 ABS 0 udata_bank4 -
+__Ludata_bank5 0 0 ABS 0 udata_bank5 -
+__Ludata_bank6 0 0 ABS 0 udata_bank6 -
+__H__absolute__ 0 0 ABS 0 __absolute__ -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__Lfunctab 0 0 ENTRY 0 functab -
+__HCommonVar 0 0 ABS 0 CommonVar -
+__Hend_init 0 0 ABS 0 end_init -
+__Hudata_shr 0 0 ABS 0 udata_shr -
+__LCommonVar 0 0 ABS 0 CommonVar -
+__Ludata_shr 0 0 ABS 0 udata_shr -
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+intentry 0 4 8 75 2
+reset_vec 0 0 0 3 2
+CommonVar 1 70 70 10 1
+config 0 8007 1000E 5 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

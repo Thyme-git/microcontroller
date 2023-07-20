@@ -1,0 +1,768 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$/tmp/xcXjFOFJN/driver_tmp_15.o
+reset_vec CODE 0 0 0 2 2 1
+end_init CODE 0 1A 1A 2 2 1
+config CONFIG 4 8007 8007 5 2 1
+$dist/default/production/ADconvert.X.production.o
+cinit CODE 0 1C 1C 10 2 1
+text1 CODE 0 2DD 2DD 25 2 1
+text2 CODE 0 349 349 17 2 1
+text3 CODE 0 122 122 5F 2 1
+text4 CODE 0 327 327 22 2 1
+text5 CODE 0 1E0 1E0 54 2 1
+text6 CODE 0 B1 B1 71 2 1
+text7 CODE 0 302 302 25 2 1
+text8 CODE 0 395 395 9 2 1
+text10 CODE 0 234 234 2F 2 1
+text11 CODE 0 181 181 5F 2 1
+text12 CODE 0 2B7 2B7 26 2 1
+text13 CODE 0 360 360 12 2 1
+text14 CODE 0 28F 28F 28 2 1
+text15 CODE 0 372 372 12 2 1
+nvBANK0 BANK0 1 35 35 1 1 1
+maintext CODE 0 2C 2C 85 2 1
+cstackCOMMON COMMON 1 70 70 8 1 1
+cstackBANK0 BANK0 1 20 20 D 1 1
+stringtext1 STRCODE 0 263 263 2C 2 1
+stringtext2 STRCODE 0 384 384 11 2 1
+stringtext3 STRCODE 0 39E 39E 4 2 1
+intentry CODE 0 4 4 16 2 1
+bssBANK0 BANK0 1 2D 2D 8 1 1
+bssCOMMON COMMON 1 78 78 3 1 1
+config CONFIG 4 8007 8007 5 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 36-6F 1
+RAM A0-EF 1
+RAM 120-16F 1
+RAM 1A0-1EF 1
+RAM 220-26F 1
+RAM 2A0-2EF 1
+RAM 320-32F 1
+BANK0 36-6F 1
+BANK1 A0-EF 1
+BANK2 120-16F 1
+BANK3 1A0-1EF 1
+BANK4 220-26F 1
+BANK5 2A0-2EF 1
+BANK6 320-32F 1
+CONST 2-3 2
+CONST 3A2-FFF 2
+ENTRY 2-3 2
+ENTRY 3A2-FFF 2
+IDLOC 8000-8003 2
+SFR10 500-56F 1
+SFR11 580-5EF 1
+SFR12 600-66F 1
+SFR13 680-6EF 1
+SFR14 700-76F 1
+SFR15 780-7EF 1
+SFR16 800-86F 1
+SFR17 880-8EF 1
+SFR18 900-96F 1
+SFR19 980-9EF 1
+SFR20 A00-A6F 1
+SFR21 A80-AEF 1
+SFR22 B00-B6F 1
+SFR23 B80-BEF 1
+SFR24 C00-C6F 1
+SFR25 C80-CEF 1
+SFR26 D00-D6F 1
+SFR27 D80-DEF 1
+SFR28 E00-E6F 1
+SFR29 E80-EEF 1
+SFR30 F00-F6F 1
+SFR31 F80-FEF 1
+CODE 2-3 2
+CODE 3A2-FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-19F 1
+SFR4 200-21F 1
+SFR5 280-29F 1
+SFR6 300-31F 1
+SFR7 380-3EF 1
+SFR8 400-46F 1
+SFR9 480-4EF 1
+BIGRAM 2000-21EF 1
+COMMON 7B-7D 1
+EEDATA F000-F0FF 2
+STRCODE 2-3 2
+STRCODE 3A2-FFF 2
+STRING 2-3 2
+STRING 3A2-FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/ADconvert.X.production.o
+1C cinit CODE >6529:/tmp/xcXjFOFJN/driver_tmp_1.s
+1C cinit CODE >6532:/tmp/xcXjFOFJN/driver_tmp_1.s
+1C cinit CODE >6568:/tmp/xcXjFOFJN/driver_tmp_1.s
+1D cinit CODE >6569:/tmp/xcXjFOFJN/driver_tmp_1.s
+1E cinit CODE >6570:/tmp/xcXjFOFJN/driver_tmp_1.s
+1F cinit CODE >6574:/tmp/xcXjFOFJN/driver_tmp_1.s
+20 cinit CODE >6575:/tmp/xcXjFOFJN/driver_tmp_1.s
+21 cinit CODE >6576:/tmp/xcXjFOFJN/driver_tmp_1.s
+22 cinit CODE >6577:/tmp/xcXjFOFJN/driver_tmp_1.s
+23 cinit CODE >6578:/tmp/xcXjFOFJN/driver_tmp_1.s
+24 cinit CODE >6579:/tmp/xcXjFOFJN/driver_tmp_1.s
+25 cinit CODE >6580:/tmp/xcXjFOFJN/driver_tmp_1.s
+26 cinit CODE >6581:/tmp/xcXjFOFJN/driver_tmp_1.s
+27 cinit CODE >6582:/tmp/xcXjFOFJN/driver_tmp_1.s
+28 cinit CODE >6588:/tmp/xcXjFOFJN/driver_tmp_1.s
+28 cinit CODE >6590:/tmp/xcXjFOFJN/driver_tmp_1.s
+29 cinit CODE >6591:/tmp/xcXjFOFJN/driver_tmp_1.s
+2A cinit CODE >6592:/tmp/xcXjFOFJN/driver_tmp_1.s
+4 intentry CODE >9:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+6 intentry CODE >11:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+B intentry CODE >12:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+E intentry CODE >13:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+11 intentry CODE >14:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+13 intentry CODE >16:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+16 intentry CODE >17:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+18 intentry CODE >19:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+372 text15 CODE >77:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+372 text15 CODE >79:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+379 text15 CODE >80:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+37E text15 CODE >80:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+383 text15 CODE >82:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+28F text14 CODE >84:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+28F text14 CODE >86:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+298 text14 CODE >87:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+29D text14 CODE >87:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2A1 text14 CODE >89:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2A5 text14 CODE >93:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2AC text14 CODE >94:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2B1 text14 CODE >94:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2B6 text14 CODE >97:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+360 text13 CODE >99:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+360 text13 CODE >101:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+367 text13 CODE >102:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+36C text13 CODE >102:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+371 text13 CODE >104:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2B7 text12 CODE >50:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2B7 text12 CODE >53:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2B9 text12 CODE >55:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2BB text12 CODE >56:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2BE text12 CODE >57:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2BF text12 CODE >59:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2C0 text12 CODE >61:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2C2 text12 CODE >62:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2C3 text12 CODE >64:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2CA text12 CODE >68:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2CC text12 CODE >69:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2CE text12 CODE >62:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2CE text12 CODE >70:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2D3 text12 CODE >71:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2D5 text12 CODE >72:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2D7 text12 CODE >59:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2D7 text12 CODE >73:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+2DC text12 CODE >75:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+181 text11 CODE >4:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+181 text11 CODE >6:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+184 text11 CODE >7:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+189 text11 CODE >9:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+190 text11 CODE >11:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+193 text11 CODE >13:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+196 text11 CODE >13:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+19A text11 CODE >15:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+19B text11 CODE >17:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1A1 text11 CODE >21:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1A5 text11 CODE >22:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1A6 text11 CODE >24:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1AD text11 CODE >26:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1B0 text11 CODE >27:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1B3 text11 CODE >29:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1B9 text11 CODE >31:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1BE text11 CODE >31:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1C2 text11 CODE >32:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1C5 text11 CODE >33:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1C7 text11 CODE >33:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1CB text11 CODE >35:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1CE text11 CODE >36:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1D1 text11 CODE >37:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1D4 text11 CODE >40:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1D5 text11 CODE >42:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1DB text11 CODE >46:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1DF text11 CODE >48:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+234 text10 CODE >4:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+234 text10 CODE >6:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+236 text10 CODE >10:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+239 text10 CODE >13:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+240 text10 CODE >16:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+242 text10 CODE >16:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+246 text10 CODE >17:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+24B text10 CODE >17:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+250 text10 CODE >18:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+251 text10 CODE >20:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+253 text10 CODE >20:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+257 text10 CODE >22:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+25C text10 CODE >22:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+262 text10 CODE >24:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+395 text8 CODE >26:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+395 text8 CODE >28:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+397 text8 CODE >33:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+399 text8 CODE >34:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+39B text8 CODE >36:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+39C text8 CODE >38:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+39D text8 CODE >39:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+302 text7 CODE >49:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+302 text7 CODE >51:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+30B text7 CODE >52:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+314 text7 CODE >53:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+31D text7 CODE >54:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+326 text7 CODE >55:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+B1 text6 CODE >106:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+B1 text6 CODE >108:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+B1 text6 CODE >109:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+B6 text6 CODE >111:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+B8 text6 CODE >112:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+BB text6 CODE >116:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+BE text6 CODE >118:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+C0 text6 CODE >119:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+C8 text6 CODE >120:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+CB text6 CODE >121:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+CD text6 CODE >122:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+D1 text6 CODE >123:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+D8 text6 CODE >124:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+E1 text6 CODE >124:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+E5 text6 CODE >124:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+E9 text6 CODE >125:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+FB text6 CODE >126:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+100 text6 CODE >126:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+104 text6 CODE >126:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+108 text6 CODE >128:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+10E text6 CODE >130:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+113 text6 CODE >131:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+119 text6 CODE >131:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+11D text6 CODE >132:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+11D text6 CODE >133:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+121 text6 CODE >134:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+1E0 text5 CODE >5:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1E0 text5 CODE >12:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1E2 text5 CODE >13:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1E6 text5 CODE >14:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1E9 text5 CODE >14:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1EB text5 CODE >15:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1ED text5 CODE >17:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1F1 text5 CODE >18:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1F4 text5 CODE >18:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1F6 text5 CODE >19:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1FC text5 CODE >20:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1FE text5 CODE >21:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+1FF text5 CODE >22:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+204 text5 CODE >23:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+208 text5 CODE >21:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+20C text5 CODE >26:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+20E text5 CODE >26:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+212 text5 CODE >26:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+216 text5 CODE >27:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+21A text5 CODE >28:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+21F text5 CODE >29:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+225 text5 CODE >31:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+22A text5 CODE >32:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+22D text5 CODE >32:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+22F text5 CODE >33:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+233 text5 CODE >34:/opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+327 text4 CODE >15:/opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+327 text4 CODE >43:/opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+32A text4 CODE >45:/opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+32E text4 CODE >46:/opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+333 text4 CODE >47:/opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+338 text4 CODE >48:/opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+33D text4 CODE >49:/opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+343 text4 CODE >52:/opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+348 text4 CODE >53:/opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+122 text3 CODE >26:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+122 text3 CODE >28:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+133 text3 CODE >29:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+136 text3 CODE >31:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+164 text3 CODE >32:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+16D text3 CODE >33:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+178 text3 CODE >33:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+17C text3 CODE >33:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+180 text3 CODE >34:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+349 text2 CODE >3:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+34A text2 CODE >6:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+34D text2 CODE >8:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+34E text2 CODE >9:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+34F text2 CODE >12:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+351 text2 CODE >13:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+353 text2 CODE >15:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+354 text2 CODE >16:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+355 text2 CODE >18:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+357 text2 CODE >19:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+359 text2 CODE >20:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+35A text2 CODE >21:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+35B text2 CODE >23:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+35F text2 CODE >24:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+2DD text1 CODE >41:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+2DD text1 CODE >43:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+2E6 text1 CODE >44:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+2EF text1 CODE >45:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+2F8 text1 CODE >46:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+301 text1 CODE >47:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+2C maintext CODE >21:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+2C maintext CODE >24:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+2F maintext CODE >25:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+30 maintext CODE >28:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+32 maintext CODE >29:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+33 maintext CODE >32:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+34 maintext CODE >33:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+36 maintext CODE >36:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+39 maintext CODE >37:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+3B maintext CODE >41:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+3D maintext CODE >42:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+3E maintext CODE >45:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+41 maintext CODE >46:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+42 maintext CODE >48:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+44 maintext CODE >50:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+45 maintext CODE >51:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+46 maintext CODE >52:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+47 maintext CODE >53:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+48 maintext CODE >55:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+4A maintext CODE >56:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+4C maintext CODE >57:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+4E maintext CODE >60:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+56 maintext CODE >63:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+5D maintext CODE >64:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+63 maintext CODE >65:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+69 maintext CODE >66:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+6F maintext CODE >67:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+71 maintext CODE >71:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+71 maintext CODE >73:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+79 maintext CODE >74:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+7F maintext CODE >75:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+82 maintext CODE >76:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+89 maintext CODE >78:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+8F maintext CODE >80:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+93 maintext CODE >81:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+93 maintext CODE >82:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+94 maintext CODE >82:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+9B maintext CODE >84:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+9E maintext CODE >85:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+A5 maintext CODE >87:/home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 1 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+__Hspace_0 3A2 0 ABS 0 - -
+__Hspace_1 7B 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 10013 0 ABS 0 - -
+polling_func@mask 71 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__end_of_load_from_eeprom_func 73C 0 CODE 0 text8 dist/default/production/ADconvert.X.production.o
+__L__absolute__ 0 0 ABS 0 __absolute__ -
+__Hstrings 0 0 ABS 0 strings -
+__table_seg_select 73C 0 STRCODE 0 stringtext3 dist/default/production/ADconvert.X.production.o
+_LATB 17 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_LATC 18 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_WPUA F39 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXjFOFJN/driver_tmp_15.o
+_main 58 0 CODE 0 maintext dist/default/production/ADconvert.X.production.o
+_pcnt 34 0 BANK0 1 bssBANK0 dist/default/production/ADconvert.X.production.o
+_rcnt 35 0 BANK0 1 nvBANK0 dist/default/production/ADconvert.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+start 34 0 CODE 0 init /tmp/xcXjFOFJN/driver_tmp_15.o
+__end_of_polling_func 5BA 0 CODE 0 text12 dist/default/production/ADconvert.X.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+?___wmul 73 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+_load_from_eeprom_func 72A 0 CODE 0 text8 dist/default/production/ADconvert.X.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+_seg_flash 32 0 BANK0 1 bssBANK0 dist/default/production/ADconvert.X.production.o
+___awmod@sign 21 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+load_from_eeprom_func@addr 73 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXjFOFJN/driver_tmp_15.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXjFOFJN/driver_tmp_15.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXjFOFJN/driver_tmp_15.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXjFOFJN/driver_tmp_15.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXjFOFJN/driver_tmp_15.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXjFOFJN/driver_tmp_15.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+wtemp0 7E 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__end_of_double_click_func 56E 0 CODE 0 text14 dist/default/production/ADconvert.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext -
+__end_of_single_click_func 708 0 CODE 0 text15 dist/default/production/ADconvert.X.production.o
+___wmul@multiplicand 75 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+_ADCON1 94 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_ADRESH 8D 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_ADRESL 8C 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_ANSELA F38 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_FVRCONbits 90C 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_key_buffer 79 0 COMMON 1 bssCOMMON dist/default/production/ADconvert.X.production.o
+scan_touch_key_func@adcres 24 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+__end_of___wmul 692 0 CODE 0 text4 dist/default/production/ADconvert.X.production.o
+main@key 2B 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+__LnvBANK0 0 0 ABS 0 nvBANK0 -
+__end_of___awmod 468 0 CODE 0 text5 dist/default/production/ADconvert.X.production.o
+___stackhi 0 0 ABS 0 - /tmp/xcXjFOFJN/driver_tmp_15.o
+___stacklo 0 0 ABS 0 - /tmp/xcXjFOFJN/driver_tmp_15.o
+start_initialization 38 0 CODE 0 cinit dist/default/production/ADconvert.X.production.o
+_irs_routine 8 0 CODE 0 intentry dist/default/production/ADconvert.X.production.o
+_ADREFbits 9A 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_double_click_func 51E 0 CODE 0 text14 dist/default/production/ADconvert.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+_T0CON0 1E 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_T0CON1 1F 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_single_click_func 6E4 0 CODE 0 text15 dist/default/production/ADconvert.X.production.o
+seg_startup_anime@i 28 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+__end_of_long_click_func 6E4 0 CODE 0 text13 dist/default/production/ADconvert.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXjFOFJN/driver_tmp_15.o
+?_scan_touch_key_func 73 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hbank4 0 0 ABS 0 bank4 -
+__Hbank5 0 0 ABS 0 bank5 -
+__Hbank6 0 0 ABS 0 bank6 -
+__Hbank7 0 0 BANK7 1 bank7 -
+__Hbank8 0 0 BANK8 1 bank8 -
+__Hbank9 0 0 BANK9 1 bank9 -
+__Hcinit 58 0 CODE 0 cinit -
+__Hsfr10 0 0 ABS 0 sfr10 -
+__Hsfr11 0 0 ABS 0 sfr11 -
+__Hsfr12 0 0 ABS 0 sfr12 -
+__Hsfr13 0 0 ABS 0 sfr13 -
+__Hsfr14 0 0 ABS 0 sfr14 -
+__Hsfr15 0 0 ABS 0 sfr15 -
+__Hsfr16 0 0 ABS 0 sfr16 -
+__Hsfr17 0 0 ABS 0 sfr17 -
+__Hsfr18 0 0 ABS 0 sfr18 -
+__Hsfr19 0 0 ABS 0 sfr19 -
+__Hsfr20 0 0 ABS 0 sfr20 -
+__Hsfr21 0 0 ABS 0 sfr21 -
+__Hsfr22 0 0 ABS 0 sfr22 -
+__Hsfr23 0 0 ABS 0 sfr23 -
+__Hsfr24 0 0 ABS 0 sfr24 -
+__Hsfr25 0 0 ABS 0 sfr25 -
+__Hsfr26 0 0 ABS 0 sfr26 -
+__Hsfr27 0 0 ABS 0 sfr27 -
+__Hsfr28 0 0 ABS 0 sfr28 -
+__Hsfr29 0 0 ABS 0 sfr29 -
+__Hsfr30 0 0 ABS 0 sfr30 -
+__Hsfr31 0 0 ABS 0 sfr31 -
+__Hstack 0 0 STACK 2 stack -
+_NVMADRH 81B 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_NVMADRL 81A 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_NVMCON2 81F 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_NVMDATL 81C 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+__Hbank10 0 0 BANK10 1 bank10 -
+__Hbank11 0 0 BANK11 1 bank11 -
+__Hbank12 0 0 BANK12 1 bank12 -
+__Hbank13 0 0 BANK13 1 bank13 -
+__Hbank14 0 0 BANK14 1 bank14 -
+__Hbank15 0 0 BANK15 1 bank15 -
+__Hbank16 0 0 BANK16 1 bank16 -
+__Hbank17 0 0 BANK17 1 bank17 -
+__Hbank18 0 0 BANK18 1 bank18 -
+__Hbank19 0 0 BANK19 1 bank19 -
+__Hbank20 0 0 BANK20 1 bank20 -
+__Hbank21 0 0 BANK21 1 bank21 -
+__Hbank22 0 0 BANK22 1 bank22 -
+__Hbank23 0 0 BANK23 1 bank23 -
+__Hbank24 0 0 BANK24 1 bank24 -
+__Hbank25 0 0 BANK25 1 bank25 -
+__Hbank26 0 0 BANK26 1 bank26 -
+__Hbank27 0 0 BANK27 1 bank27 -
+__Hbank28 0 0 BANK28 1 bank28 -
+__Hbank29 0 0 BANK29 1 bank29 -
+__Hbank30 0 0 BANK30 1 bank30 -
+__Hbank31 0 0 BANK31 1 bank31 -
+__Hbigram 0 0 ABS 0 bigram -
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 10018 0 CONFIG 4 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lbank4 0 0 ABS 0 bank4 -
+__Lbank5 0 0 ABS 0 bank5 -
+__Lbank6 0 0 ABS 0 bank6 -
+__Lbank7 0 0 BANK7 1 bank7 -
+__Lbank8 0 0 BANK8 1 bank8 -
+__Lbank9 0 0 BANK9 1 bank9 -
+__Lcinit 38 0 CODE 0 cinit -
+__Lsfr10 0 0 ABS 0 sfr10 -
+__Lsfr11 0 0 ABS 0 sfr11 -
+__Lsfr12 0 0 ABS 0 sfr12 -
+__Lsfr13 0 0 ABS 0 sfr13 -
+__Lsfr14 0 0 ABS 0 sfr14 -
+__Lsfr15 0 0 ABS 0 sfr15 -
+__Lsfr16 0 0 ABS 0 sfr16 -
+__Lsfr17 0 0 ABS 0 sfr17 -
+__Lsfr18 0 0 ABS 0 sfr18 -
+__Lsfr19 0 0 ABS 0 sfr19 -
+__Lsfr20 0 0 ABS 0 sfr20 -
+__Lsfr21 0 0 ABS 0 sfr21 -
+__Lsfr22 0 0 ABS 0 sfr22 -
+__Lsfr23 0 0 ABS 0 sfr23 -
+__Lsfr24 0 0 ABS 0 sfr24 -
+__Lsfr25 0 0 ABS 0 sfr25 -
+__Lsfr26 0 0 ABS 0 sfr26 -
+__Lsfr27 0 0 ABS 0 sfr27 -
+__Lsfr28 0 0 ABS 0 sfr28 -
+__Lsfr29 0 0 ABS 0 sfr29 -
+__Lsfr30 0 0 ABS 0 sfr30 -
+__Lsfr31 0 0 ABS 0 sfr31 -
+__Lstack 0 0 STACK 2 stack -
+_INTCONbits B 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hheap 0 0 HEAP 7 heap -
+__Hinit 34 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Hsfr4 0 0 ABS 0 sfr4 -
+__Hsfr5 0 0 ABS 0 sfr5 -
+__Hsfr6 0 0 ABS 0 sfr6 -
+__Hsfr7 0 0 ABS 0 sfr7 -
+__Hsfr8 0 0 ABS 0 sfr8 -
+__Hsfr9 0 0 ABS 0 sfr9 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Lheap 0 0 HEAP 7 heap -
+__Linit 34 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Lsfr4 0 0 ABS 0 sfr4 -
+__Lsfr5 0 0 ABS 0 sfr5 -
+__Lsfr6 0 0 ABS 0 sfr6 -
+__Lsfr7 0 0 ABS 0 sfr7 -
+__Lsfr8 0 0 ABS 0 sfr8 -
+__Lsfr9 0 0 ABS 0 sfr9 -
+__Ltext 0 0 ABS 0 text -
+__pstringtext1 4C6 0 STRCODE 0 stringtext1 dist/default/production/ADconvert.X.production.o
+__pstringtext2 708 0 STRCODE 0 stringtext2 dist/default/production/ADconvert.X.production.o
+__pstringtext3 73C 0 STRCODE 0 stringtext3 dist/default/production/ADconvert.X.production.o
+__pnvBANK0 35 0 BANK0 1 nvBANK0 dist/default/production/ADconvert.X.production.o
+___wmul 64E 0 CODE 0 text4 dist/default/production/ADconvert.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__end_of_store_eeprom_func 6C0 0 CODE 0 text2 dist/default/production/ADconvert.X.production.o
+int$flags 7E 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+__table_encoded 708 0 STRCODE 0 stringtext2 dist/default/production/ADconvert.X.production.o
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__S0 3A2 0 ABS 0 - -
+__S1 7B 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__end_of_seg_startup_anime 302 0 CODE 0 text3 dist/default/production/ADconvert.X.production.o
+_long_click_func 6C0 0 CODE 0 text13 dist/default/production/ADconvert.X.production.o
+__end_of_scan_func 3C0 0 CODE 0 text11 dist/default/production/ADconvert.X.production.o
+__HnvBANK0 0 0 ABS 0 nvBANK0 -
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXjFOFJN/driver_tmp_15.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+polling_func@w_tmp 70 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+__Lstringtext1 0 0 ABS 0 stringtext1 -
+__Lstringtext2 0 0 ABS 0 stringtext2 -
+__Lstringtext3 0 0 ABS 0 stringtext3 -
+_store_seg_buffer 5BA 0 CODE 0 text1 dist/default/production/ADconvert.X.production.o
+___awmod@counter 20 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+_PIE0bits 716 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+__end_of__table_encoded 72A 0 STRCODE 0 stringtext2 dist/default/production/ADconvert.X.production.o
+_scan_func 302 0 CODE 0 text11 dist/default/production/ADconvert.X.production.o
+__ptext10 468 0 CODE 0 text10 dist/default/production/ADconvert.X.production.o
+__ptext11 302 0 CODE 0 text11 dist/default/production/ADconvert.X.production.o
+__ptext12 56E 0 CODE 0 text12 dist/default/production/ADconvert.X.production.o
+__ptext13 6C0 0 CODE 0 text13 dist/default/production/ADconvert.X.production.o
+__ptext14 51E 0 CODE 0 text14 dist/default/production/ADconvert.X.production.o
+__ptext15 6E4 0 CODE 0 text15 dist/default/production/ADconvert.X.production.o
+___awmod 3C0 0 CODE 0 text5 dist/default/production/ADconvert.X.production.o
+__Lbank10 0 0 BANK10 1 bank10 -
+__Lbank11 0 0 BANK11 1 bank11 -
+__Lbank12 0 0 BANK12 1 bank12 -
+__Lbank13 0 0 BANK13 1 bank13 -
+__Lbank14 0 0 BANK14 1 bank14 -
+__Lbank15 0 0 BANK15 1 bank15 -
+__Lbank16 0 0 BANK16 1 bank16 -
+__Lbank17 0 0 BANK17 1 bank17 -
+__Lbank18 0 0 BANK18 1 bank18 -
+__Lbank19 0 0 BANK19 1 bank19 -
+__Lbank20 0 0 BANK20 1 bank20 -
+__Lbank21 0 0 BANK21 1 bank21 -
+__Lbank22 0 0 BANK22 1 bank22 -
+__Lbank23 0 0 BANK23 1 bank23 -
+__Lbank24 0 0 BANK24 1 bank24 -
+__Lbank25 0 0 BANK25 1 bank25 -
+__Lbank26 0 0 BANK26 1 bank26 -
+__Lbank27 0 0 BANK27 1 bank27 -
+__Lbank28 0 0 BANK28 1 bank28 -
+__Lbank29 0 0 BANK29 1 bank29 -
+__Lbank30 0 0 BANK30 1 bank30 -
+__Lbank31 0 0 BANK31 1 bank31 -
+__pmaintext 58 0 CODE 0 maintext dist/default/production/ADconvert.X.production.o
+__Lbigram 0 0 ABS 0 bigram -
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 4 config -
+___wmul@multiplier 73 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+store_eeprom_func@addr 73 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+store_eeprom_func@data 75 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+_store_eeprom_func 692 0 CODE 0 text2 dist/default/production/ADconvert.X.production.o
+_seg_idx 78 0 COMMON 1 bssCOMMON dist/default/production/ADconvert.X.production.o
+_seg_startup_anime 244 0 CODE 0 text3 dist/default/production/ADconvert.X.production.o
+_ADCON0bits 93 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+scan_touch_key_func@port 26 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__pbssCOMMON 78 0 COMMON 1 bssCOMMON dist/default/production/ADconvert.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+_PIR0bits 70C 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+__Lend_init 34 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_seg_display_func 468 0 CODE 0 text10 dist/default/production/ADconvert.X.production.o
+_ADPCHbits 9E 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+end_of_initialization 50 0 CODE 0 cinit dist/default/production/ADconvert.X.production.o
+_seg_buffer 2D 0 BANK0 1 bssBANK0 dist/default/production/ADconvert.X.production.o
+_scan_touch_key_func 162 0 CODE 0 text6 dist/default/production/ADconvert.X.production.o
+seg_startup_anime@times 22 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+__end_of_irs_routine 34 0 CODE 0 intentry dist/default/production/ADconvert.X.production.o
+__Hintentry 34 0 CODE 0 intentry -
+__end_of_load_seg_buffer 64E 0 CODE 0 text7 dist/default/production/ADconvert.X.production.o
+__Lstrings 0 0 ABS 0 strings -
+?___awmod 73 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+__Hreset_vec 4 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+___awmod@dividend 75 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+__end_of_store_seg_buffer 604 0 CODE 0 text1 dist/default/production/ADconvert.X.production.o
+__ptext1 5BA 0 CODE 0 text1 dist/default/production/ADconvert.X.production.o
+__ptext2 692 0 CODE 0 text2 dist/default/production/ADconvert.X.production.o
+__ptext3 244 0 CODE 0 text3 dist/default/production/ADconvert.X.production.o
+__ptext4 64E 0 CODE 0 text4 dist/default/production/ADconvert.X.production.o
+__ptext5 3C0 0 CODE 0 text5 dist/default/production/ADconvert.X.production.o
+__ptext6 162 0 CODE 0 text6 dist/default/production/ADconvert.X.production.o
+__ptext7 604 0 CODE 0 text7 dist/default/production/ADconvert.X.production.o
+__ptext8 72A 0 CODE 0 text8 dist/default/production/ADconvert.X.production.o
+_curr_key 7A 0 COMMON 1 bssCOMMON dist/default/production/ADconvert.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__H__absolute__ 0 0 ABS 0 __absolute__ -
+__end_of_startup_anime_code 51E 0 STRCODE 0 stringtext1 dist/default/production/ADconvert.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__Hstringtext1 0 0 ABS 0 stringtext1 -
+__Hstringtext2 0 0 ABS 0 stringtext2 -
+__Hstringtext3 0 0 ABS 0 stringtext3 -
+___heap_hi 0 0 ABS 0 - /tmp/xcXjFOFJN/driver_tmp_15.o
+___heap_lo 0 0 ABS 0 - /tmp/xcXjFOFJN/driver_tmp_15.o
+__end_of__initialization 50 0 CODE 0 cinit dist/default/production/ADconvert.X.production.o
+___awmod@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+_NVMCON1bits 81E 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_load_seg_buffer 604 0 CODE 0 text7 dist/default/production/ADconvert.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext -
+scan_touch_key_func@i 20 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+__end_of__table_seg_select 744 0 STRCODE 0 stringtext3 dist/default/production/ADconvert.X.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+__Hend_init 38 0 CODE 0 end_init -
+_startup_anime_code 4C6 0 STRCODE 0 stringtext1 dist/default/production/ADconvert.X.production.o
+scan_touch_key_func@key 22 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+__end_of_seg_display_func 4C6 0 CODE 0 text10 dist/default/production/ADconvert.X.production.o
+_ADCLKbits 98 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+__end_of_main 162 0 CODE 0 maintext dist/default/production/ADconvert.X.production.o
+_polling_func 56E 0 CODE 0 text12 dist/default/production/ADconvert.X.production.o
+_ADACQ 9D 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_ADPRE 9C 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+double_click_func@pre_key 71 0 COMMON 1 cstackCOMMON dist/default/production/ADconvert.X.production.o
+_PORTA C 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_TMR0H 1D 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_TMR0L 1C 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_TRISA 11 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_TRISB 12 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+_TRISC 13 0 ABS 0 - dist/default/production/ADconvert.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__end_of_scan_touch_key_func 244 0 CODE 0 text6 dist/default/production/ADconvert.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production/ADconvert.X.production.o
+__initialization 38 0 CODE 0 cinit dist/default/production/ADconvert.X.production.o
+__pbssBANK0 2D 0 BANK0 1 bssBANK0 dist/default/production/ADconvert.X.production.o
+___wmul@product 20 0 BANK0 1 cstackBANK0 dist/default/production/ADconvert.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text8 0 395 72A 9 2
+text14 0 28F 51E F5 2
+cstackCOMMON 1 70 70 B 1
+cstackBANK0 1 20 20 16 1
+stringtext1 0 263 4C6 2C 2
+stringtext2 0 384 708 11 2
+stringtext3 0 39E 73C 4 2
+intentry 0 4 8 25F 2
+reset_vec 0 0 0 2 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

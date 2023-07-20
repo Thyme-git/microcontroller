@@ -1,0 +1,516 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F18854 ]
+[d frameptr 6 ]
+"5 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+[v i1___awmod __awmod `(i  1 e 2 0 ]
+"43 /opt/microchip/xc8/v2.41/pic/sources/c99/common/fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"10 /opt/microchip/xc8/v2.41/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 /opt/microchip/xc8/v2.41/pic/sources/c99/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"15 /opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 /opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 /opt/microchip/xc8/v2.41/pic/sources/c99/common/xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 /opt/microchip/xc8/v2.41/pic/sources/c99/pic/__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"3 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/eeprom.c
+[v _store_eeprom_func store_eeprom_func `(v  1 e 1 0 ]
+"26
+[v _load_from_eeprom_func load_from_eeprom_func `(uc  1 e 1 0 ]
+"3 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/eusart.c
+[v _init_eusart_func init_eusart_func `(v  1 e 1 0 ]
+"41
+[v _eusart_tx_func eusart_tx_func `(v  1 e 1 0 ]
+"50
+[v _eusart_rx_func eusart_rx_func `(v  1 e 1 0 ]
+"57
+[v _print_red_start print_red_start `(v  1 e 1 0 ]
+"66
+[v _print_green_start print_green_start `(v  1 e 1 0 ]
+"84
+[v _print_white_start print_white_start `(v  1 e 1 0 ]
+"92
+[v _print_yellow_start print_yellow_start `(v  1 e 1 0 ]
+"101
+[v _mov_cursor mov_cursor `(v  1 e 1 0 ]
+"10 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/main.c
+[v _irs_routine irs_routine `II(v  1 e 1 0 ]
+"28
+[v _main main `(v  1 e 1 0 ]
+"4 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/scan_botton.c
+[v _scan_func scan_func `(v  1 e 1 0 ]
+"50
+[v _polling_func polling_func `(v  1 e 1 0 ]
+"77
+[v _single_click_func single_click_func `(v  1 e 1 0 ]
+"84
+[v _double_click_func double_click_func `(v  1 e 1 0 ]
+"99
+[v _long_click_func long_click_func `(v  1 e 1 0 ]
+"106
+[v _scan_touch_key_func scan_touch_key_func `(s  1 e 2 0 ]
+"4 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/seg_display.c
+[v _seg_display_func seg_display_func `(v  1 e 1 0 ]
+"26
+[v _seg_startup_anime seg_startup_anime `(v  1 e 1 0 ]
+"6 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/eusart.h
+[v _eusart_receive_buffer eusart_receive_buffer `uc  1 e 1 0 ]
+"17 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/scan_botton.h
+[v _curr_key curr_key `uc  1 e 1 0 ]
+"19
+[v _pcnt pcnt `uc  1 e 1 0 ]
+"20
+[v _rcnt rcnt `uc  1 e 1 0 ]
+"21
+[v _key_buffer key_buffer `uc  1 e 1 0 ]
+"22
+[v _touch_key_buffer touch_key_buffer `uc  1 e 1 0 ]
+"23 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/seg_display.h
+[v _seg_buffer seg_buffer `[4]uc  1 e 4 0 ]
+"24
+[v _seg_idx seg_idx `uc  1 e 1 0 ]
+"25
+[v _seg_flash seg_flash `uc  1 e 1 0 ]
+"26
+[v __table_encoded _table_encoded `DC[17]uc  1 e 17 0 ]
+"46
+[v __table_seg_select _table_seg_select `DC[4]uc  1 e 4 0 ]
+"53
+[v _startup_anime_code startup_anime_code `DC[11]ul  1 e 44 0 ]
+[s S70 . 1 `uc 1 INTEDG 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"364 /opt/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8/pic/include/proc/pic16f18854.h
+[u S75 . 1 `S70 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES75  1 e 1 @11 ]
+"384
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"591
+[v _TRISA TRISA `VEuc  1 e 1 @17 ]
+"653
+[v _TRISB TRISB `VEuc  1 e 1 @18 ]
+[s S594 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"670
+[u S603 . 1 `S594 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES603  1 e 1 @18 ]
+"715
+[v _TRISC TRISC `VEuc  1 e 1 @19 ]
+"839
+[v _LATB LATB `VEuc  1 e 1 @23 ]
+"901
+[v _LATC LATC `VEuc  1 e 1 @24 ]
+"963
+[v _TMR0L TMR0L `VEuc  1 e 1 @28 ]
+"1101
+[v _TMR0H TMR0H `VEuc  1 e 1 @29 ]
+"1355
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @30 ]
+"1420
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @31 ]
+"1538
+[v _ADRESL ADRESL `VEuc  1 e 1 @140 ]
+"1558
+[v _ADRESH ADRESH `VEuc  1 e 1 @141 ]
+[s S138 . 1 `uc 1 ADGO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM 1 0 :2:2 
+`uc 1 ADCS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ADCONT 1 0 :1:6 
+`uc 1 ADON 1 0 :1:7 
+]
+"1895
+[s S146 . 1 `uc 1 DONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFRM 1 0 :2:2 
+]
+[s S150 . 1 `uc 1 nDONE 1 0 :1:0 
+]
+[s S152 . 1 `uc 1 GO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM0 1 0 :1:2 
+`uc 1 ADFM1 1 0 :1:3 
+]
+[s S157 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFRM0 1 0 :1:2 
+`uc 1 ADFRM1 1 0 :1:3 
+]
+[u S162 . 1 `S138 1 . 1 0 `S146 1 . 1 0 `S150 1 . 1 0 `S152 1 . 1 0 `S157 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES162  1 e 1 @147 ]
+"1970
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @148 ]
+[s S353 . 1 `uc 1 ADDSEN 1 0 :1:0 
+`uc 1 . 1 0 :4:1 
+`uc 1 ADGPOL 1 0 :1:5 
+`uc 1 ADIPEN 1 0 :1:6 
+`uc 1 ADPPOL 1 0 :1:7 
+]
+"1984
+[u S359 . 1 `S353 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES359  1 e 1 @148 ]
+[s S116 . 1 `uc 1 ADCCS 1 0 :6:0 
+]
+"2245
+[s S118 . 1 `uc 1 ADCCS0 1 0 :1:0 
+`uc 1 ADCCS1 1 0 :1:1 
+`uc 1 ADCCS2 1 0 :1:2 
+`uc 1 ADCCS3 1 0 :1:3 
+`uc 1 ADCCS4 1 0 :1:4 
+`uc 1 ADCCS5 1 0 :1:5 
+]
+[u S125 . 1 `S116 1 . 1 0 `S118 1 . 1 0 ]
+[v _ADCLKbits ADCLKbits `VES125  1 e 1 @152 ]
+[s S98 . 1 `uc 1 ADPREF 1 0 :2:0 
+`uc 1 . 1 0 :2:2 
+`uc 1 ADNREF 1 0 :1:4 
+]
+"2353
+[s S102 . 1 `uc 1 ADPREF0 1 0 :1:0 
+`uc 1 ADPREF1 1 0 :1:1 
+]
+[u S105 . 1 `S98 1 . 1 0 `S102 1 . 1 0 ]
+[v _ADREFbits ADREFbits `VES105  1 e 1 @154 ]
+"2430
+[v _ADPRE ADPRE `VEuc  1 e 1 @156 ]
+"2500
+[v _ADACQ ADACQ `VEuc  1 e 1 @157 ]
+[s S331 . 1 `uc 1 ADPCH 1 0 :6:0 
+]
+"2588
+[s S333 . 1 `uc 1 ADPCH0 1 0 :1:0 
+`uc 1 ADPCH1 1 0 :1:1 
+`uc 1 ADPCH2 1 0 :1:2 
+`uc 1 ADPCH3 1 0 :1:3 
+`uc 1 ADPCH4 1 0 :1:4 
+`uc 1 ADPCH5 1 0 :1:5 
+]
+[u S340 . 1 `S331 1 . 1 0 `S333 1 . 1 0 ]
+[v _ADPCHbits ADPCHbits `VES340  1 e 1 @158 ]
+[s S721 . 1 `uc 1 RC1REG 1 0 :8:0 
+]
+"3522
+[u S723 . 1 `S721 1 . 1 0 ]
+[v _RC1REGbits RC1REGbits `VES723  1 e 1 @281 ]
+"3566
+[v _TXREG TXREG `VEuc  1 e 1 @282 ]
+"3631
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @283 ]
+"3693
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @284 ]
+[s S680 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3768
+[u S689 . 1 `S680 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES689  1 e 1 @285 ]
+[s S638 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3948
+[u S647 . 1 `S638 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES647  1 e 1 @286 ]
+[s S659 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"4136
+[u S668 . 1 `S659 1 . 1 0 ]
+[v _BAUD1CONbits BAUD1CONbits `VES668  1 e 1 @287 ]
+[s S22 . 1 `uc 1 INTF 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 IOCIF 1 0 :1:4 
+`uc 1 TMR0IF 1 0 :1:5 
+]
+"21013
+[u S27 . 1 `S22 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES27  1 e 1 @1804 ]
+[s S45 . 1 `uc 1 SSP1IF 1 0 :1:0 
+`uc 1 BCL1IF 1 0 :1:1 
+`uc 1 SSP2IF 1 0 :1:2 
+`uc 1 BCL2IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+"21120
+[u S52 . 1 `S45 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES52  1 e 1 @1807 ]
+[s S83 . 1 `uc 1 INTE 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 IOCIE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+"21435
+[u S88 . 1 `S83 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES88  1 e 1 @1814 ]
+[s S703 . 1 `uc 1 SSP1IE 1 0 :1:0 
+`uc 1 BCL1IE 1 0 :1:1 
+`uc 1 SSP2IE 1 0 :1:2 
+`uc 1 BCL2IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+]
+"21542
+[u S710 . 1 `S703 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES710  1 e 1 @1817 ]
+"22845
+[v _NVMADRL NVMADRL `VEuc  1 e 1 @2074 ]
+"22907
+[v _NVMADRH NVMADRH `VEuc  1 e 1 @2075 ]
+"22963
+[v _NVMDATL NVMDATL `VEuc  1 e 1 @2076 ]
+[s S542 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 LWLO 1 0 :1:5 
+`uc 1 NVMREGS 1 0 :1:6 
+]
+"23091
+[u S550 . 1 `S542 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES550  1 e 1 @2078 ]
+"23131
+[v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2079 ]
+[s S472 . 1 `uc 1 ADFVR 1 0 :2:0 
+`uc 1 CDAFVR 1 0 :2:2 
+`uc 1 TSRNG 1 0 :1:4 
+`uc 1 TSEN 1 0 :1:5 
+`uc 1 FVRRDY 1 0 :1:6 
+`uc 1 FVREN 1 0 :1:7 
+]
+"23936
+[s S479 . 1 `uc 1 ADFVR0 1 0 :1:0 
+`uc 1 ADFVR1 1 0 :1:1 
+`uc 1 CDAFVR0 1 0 :1:2 
+`uc 1 CDAFVR1 1 0 :1:3 
+]
+[u S484 . 1 `S472 1 . 1 0 `S479 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES484  1 e 1 @2316 ]
+"31386
+[v _RXPPS RXPPS `VEuc  1 e 1 @3787 ]
+"32190
+[v _RB6PPS RB6PPS `VEuc  1 e 1 @3870 ]
+"32690
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"32752
+[v _WPUA WPUA `VEuc  1 e 1 @3897 ]
+[s S615 . 1 `uc 1 ANSB0 1 0 :1:0 
+`uc 1 ANSB1 1 0 :1:1 
+`uc 1 ANSB2 1 0 :1:2 
+`uc 1 ANSB3 1 0 :1:3 
+`uc 1 ANSB4 1 0 :1:4 
+`uc 1 ANSB5 1 0 :1:5 
+`uc 1 ANSB6 1 0 :1:6 
+`uc 1 ANSB7 1 0 :1:7 
+]
+"33327
+[u S624 . 1 `S615 1 . 1 0 ]
+"33327
+"33327
+[v _ANSELBbits ANSELBbits `VES624  1 e 1 @3907 ]
+"28 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"84
+[v main@pos pos `s  1 a 2 23 ]
+"83
+[v main@adcres adcres `s  1 a 2 21 ]
+"159
+} 0
+"26 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/seg_display.c
+[v _seg_startup_anime seg_startup_anime `(v  1 e 1 0 ]
+{
+"29
+[v seg_startup_anime@i i `i  1 a 2 13 ]
+"26
+[v seg_startup_anime@times times `i  1 p 2 7 ]
+"34
+} 0
+"15 /opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"106 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/scan_botton.c
+[v _scan_touch_key_func scan_touch_key_func `(s  1 e 2 0 ]
+{
+"133
+[v scan_touch_key_func@i_431 i `i  1 a 2 7 ]
+"125
+[v scan_touch_key_func@i i `i  1 a 2 5 ]
+"118
+[v scan_touch_key_func@port port `uc  1 a 1 9 ]
+"109
+[v scan_touch_key_func@adcres1 adcres1 `s  1 a 2 12 ]
+"108
+[v scan_touch_key_func@adcres0 adcres0 `s  1 a 2 10 ]
+"148
+} 0
+"92 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/eusart.c
+[v _print_yellow_start print_yellow_start `(v  1 e 1 0 ]
+{
+"99
+} 0
+"84
+[v _print_white_start print_white_start `(v  1 e 1 0 ]
+{
+"90
+} 0
+"57
+[v _print_red_start print_red_start `(v  1 e 1 0 ]
+{
+"64
+} 0
+"66
+[v _print_green_start print_green_start `(v  1 e 1 0 ]
+{
+"73
+} 0
+"101
+[v _mov_cursor mov_cursor `(v  1 e 1 0 ]
+{
+"103
+[v mov_cursor@pos_buffer pos_buffer `[3]uc  1 a 3 18 ]
+"101
+[v mov_cursor@pos pos `s  1 p 2 16 ]
+"113
+} 0
+"41
+[v _eusart_tx_func eusart_tx_func `(v  1 e 1 0 ]
+{
+[v eusart_tx_func@data data `uc  1 a 1 wreg ]
+[v eusart_tx_func@data data `uc  1 a 1 wreg ]
+"44
+[v eusart_tx_func@data data `uc  1 a 1 0 ]
+"48
+} 0
+"5 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 14 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 13 ]
+[v ___awdiv@counter counter `uc  1 a 1 12 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 7 ]
+[v ___awdiv@dividend dividend `i  1 p 2 9 ]
+"41
+} 0
+"3 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/eusart.c
+[v _init_eusart_func init_eusart_func `(v  1 e 1 0 ]
+{
+"39
+} 0
+"10 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/main.c
+[v _irs_routine irs_routine `II(v  1 e 1 0 ]
+{
+"26
+} 0
+"5 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+[v i1___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v i1___awmod@sign sign `uc  1 a 1 6 ]
+[v i1___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v i1___awmod@divisor divisor `i  1 p 2 0 ]
+[v i1___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"4 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/seg_display.c
+[v _seg_display_func seg_display_func `(v  1 e 1 0 ]
+{
+"24
+} 0
+"4 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/scan_botton.c
+[v _scan_func scan_func `(v  1 e 1 0 ]
+{
+"48
+} 0
+"50
+[v _polling_func polling_func `(v  1 e 1 0 ]
+{
+"53
+[v polling_func@mask mask `uc  1 a 1 1 ]
+"52
+[v polling_func@w_tmp w_tmp `uc  1 a 1 0 ]
+"75
+} 0
+"99
+[v _long_click_func long_click_func `(v  1 e 1 0 ]
+{
+"104
+} 0
+"84
+[v _double_click_func double_click_func `(v  1 e 1 0 ]
+{
+"86
+[v double_click_func@pre_key pre_key `uc  1 a 1 1 ]
+"97
+} 0
+"77
+[v _single_click_func single_click_func `(v  1 e 1 0 ]
+{
+"82
+} 0
+"50 /home/thyme/study/Dian/seed-class/microcontroller/EUSART.X/eusart.c
+[v _eusart_rx_func eusart_rx_func `(v  1 e 1 0 ]
+{
+"55
+} 0

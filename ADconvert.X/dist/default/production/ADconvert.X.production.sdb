@@ -1,0 +1,341 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F18854 ]
+[d frameptr 6 ]
+"5 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"43 /opt/microchip/xc8/v2.41/pic/sources/c99/common/fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"10 /opt/microchip/xc8/v2.41/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 /opt/microchip/xc8/v2.41/pic/sources/c99/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"15 /opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 /opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 /opt/microchip/xc8/v2.41/pic/sources/c99/common/xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 /opt/microchip/xc8/v2.41/pic/sources/c99/pic/__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"3 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+[v _store_eeprom_func store_eeprom_func `(v  1 e 1 0 ]
+"26
+[v _load_from_eeprom_func load_from_eeprom_func `(uc  1 e 1 0 ]
+"41
+[v _store_seg_buffer store_seg_buffer `(v  1 e 1 0 ]
+"49
+[v _load_seg_buffer load_seg_buffer `(v  1 e 1 0 ]
+"9 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+[v _irs_routine irs_routine `II(v  1 e 1 0 ]
+"21
+[v _main main `(v  1 e 1 0 ]
+"4 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+[v _scan_func scan_func `(v  1 e 1 0 ]
+"50
+[v _polling_func polling_func `(v  1 e 1 0 ]
+"77
+[v _single_click_func single_click_func `(v  1 e 1 0 ]
+"84
+[v _double_click_func double_click_func `(v  1 e 1 0 ]
+"99
+[v _long_click_func long_click_func `(v  1 e 1 0 ]
+"106
+[v _scan_touch_key_func scan_touch_key_func `(i  1 e 2 0 ]
+"4 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+[v _seg_display_func seg_display_func `(v  1 e 1 0 ]
+"26
+[v _seg_startup_anime seg_startup_anime `(v  1 e 1 0 ]
+"17 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.h
+[v _curr_key curr_key `uc  1 e 1 0 ]
+"19
+[v _pcnt pcnt `uc  1 e 1 0 ]
+"20
+[v _rcnt rcnt `uc  1 e 1 0 ]
+"21
+[v _key_buffer key_buffer `uc  1 e 1 0 ]
+"23 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.h
+[v _seg_buffer seg_buffer `[4]uc  1 e 4 0 ]
+"24
+[v _seg_idx seg_idx `uc  1 e 1 0 ]
+"25
+[v _seg_flash seg_flash `uc  1 e 1 0 ]
+"26
+[v __table_encoded _table_encoded `DC[17]uc  1 e 17 0 ]
+"46
+[v __table_seg_select _table_seg_select `DC[4]uc  1 e 4 0 ]
+"53
+[v _startup_anime_code startup_anime_code `DC[11]ul  1 e 44 0 ]
+[s S49 . 1 `uc 1 INTEDG 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"364 /opt/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8/pic/include/proc/pic16f18854.h
+[u S54 . 1 `S49 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES54  1 e 1 @11 ]
+"384
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"591
+[v _TRISA TRISA `VEuc  1 e 1 @17 ]
+"653
+[v _TRISB TRISB `VEuc  1 e 1 @18 ]
+"715
+[v _TRISC TRISC `VEuc  1 e 1 @19 ]
+"839
+[v _LATB LATB `VEuc  1 e 1 @23 ]
+"901
+[v _LATC LATC `VEuc  1 e 1 @24 ]
+"963
+[v _TMR0L TMR0L `VEuc  1 e 1 @28 ]
+"1101
+[v _TMR0H TMR0H `VEuc  1 e 1 @29 ]
+"1355
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @30 ]
+"1420
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @31 ]
+"1538
+[v _ADRESL ADRESL `VEuc  1 e 1 @140 ]
+"1558
+[v _ADRESH ADRESH `VEuc  1 e 1 @141 ]
+[s S117 . 1 `uc 1 ADGO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM 1 0 :2:2 
+`uc 1 ADCS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ADCONT 1 0 :1:6 
+`uc 1 ADON 1 0 :1:7 
+]
+"1895
+[s S125 . 1 `uc 1 DONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFRM 1 0 :2:2 
+]
+[s S129 . 1 `uc 1 nDONE 1 0 :1:0 
+]
+[s S131 . 1 `uc 1 GO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM0 1 0 :1:2 
+`uc 1 ADFM1 1 0 :1:3 
+]
+[s S136 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFRM0 1 0 :1:2 
+`uc 1 ADFRM1 1 0 :1:3 
+]
+[u S141 . 1 `S117 1 . 1 0 `S125 1 . 1 0 `S129 1 . 1 0 `S131 1 . 1 0 `S136 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES141  1 e 1 @147 ]
+"1970
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @148 ]
+[s S95 . 1 `uc 1 ADCCS 1 0 :6:0 
+]
+"2245
+[s S97 . 1 `uc 1 ADCCS0 1 0 :1:0 
+`uc 1 ADCCS1 1 0 :1:1 
+`uc 1 ADCCS2 1 0 :1:2 
+`uc 1 ADCCS3 1 0 :1:3 
+`uc 1 ADCCS4 1 0 :1:4 
+`uc 1 ADCCS5 1 0 :1:5 
+]
+[u S104 . 1 `S95 1 . 1 0 `S97 1 . 1 0 ]
+[v _ADCLKbits ADCLKbits `VES104  1 e 1 @152 ]
+[s S77 . 1 `uc 1 ADPREF 1 0 :2:0 
+`uc 1 . 1 0 :2:2 
+`uc 1 ADNREF 1 0 :1:4 
+]
+"2353
+[s S81 . 1 `uc 1 ADPREF0 1 0 :1:0 
+`uc 1 ADPREF1 1 0 :1:1 
+]
+[u S84 . 1 `S77 1 . 1 0 `S81 1 . 1 0 ]
+[v _ADREFbits ADREFbits `VES84  1 e 1 @154 ]
+"2430
+[v _ADPRE ADPRE `VEuc  1 e 1 @156 ]
+"2500
+[v _ADACQ ADACQ `VEuc  1 e 1 @157 ]
+[s S281 . 1 `uc 1 ADPCH 1 0 :6:0 
+]
+"2588
+[s S283 . 1 `uc 1 ADPCH0 1 0 :1:0 
+`uc 1 ADPCH1 1 0 :1:1 
+`uc 1 ADPCH2 1 0 :1:2 
+`uc 1 ADPCH3 1 0 :1:3 
+`uc 1 ADPCH4 1 0 :1:4 
+`uc 1 ADPCH5 1 0 :1:5 
+]
+[u S290 . 1 `S281 1 . 1 0 `S283 1 . 1 0 ]
+[v _ADPCHbits ADPCHbits `VES290  1 e 1 @158 ]
+[s S22 . 1 `uc 1 INTF 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 IOCIF 1 0 :1:4 
+`uc 1 TMR0IF 1 0 :1:5 
+]
+"21013
+[u S27 . 1 `S22 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES27  1 e 1 @1804 ]
+[s S62 . 1 `uc 1 INTE 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 IOCIE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+"21435
+[u S67 . 1 `S62 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES67  1 e 1 @1814 ]
+"22845
+[v _NVMADRL NVMADRL `VEuc  1 e 1 @2074 ]
+"22907
+[v _NVMADRH NVMADRH `VEuc  1 e 1 @2075 ]
+"22963
+[v _NVMDATL NVMDATL `VEuc  1 e 1 @2076 ]
+[s S471 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 LWLO 1 0 :1:5 
+`uc 1 NVMREGS 1 0 :1:6 
+]
+"23091
+[u S479 . 1 `S471 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES479  1 e 1 @2078 ]
+"23131
+[v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2079 ]
+[s S401 . 1 `uc 1 ADFVR 1 0 :2:0 
+`uc 1 CDAFVR 1 0 :2:2 
+`uc 1 TSRNG 1 0 :1:4 
+`uc 1 TSEN 1 0 :1:5 
+`uc 1 FVRRDY 1 0 :1:6 
+`uc 1 FVREN 1 0 :1:7 
+]
+"23936
+[s S408 . 1 `uc 1 ADFVR0 1 0 :1:0 
+`uc 1 ADFVR1 1 0 :1:1 
+`uc 1 CDAFVR0 1 0 :1:2 
+`uc 1 CDAFVR1 1 0 :1:3 
+]
+[u S413 . 1 `S401 1 . 1 0 `S408 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES413  1 e 1 @2316 ]
+"32690
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"32752
+[v _WPUA WPUA `VEuc  1 e 1 @3897 ]
+"21 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"71
+[v main@key key `i  1 a 2 11 ]
+"110
+} 0
+"41 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+[v _store_seg_buffer store_seg_buffer `(v  1 e 1 0 ]
+{
+"47
+} 0
+"3
+[v _store_eeprom_func store_eeprom_func `(v  1 e 1 0 ]
+{
+[v store_eeprom_func@data data `uc  1 a 1 wreg ]
+[v store_eeprom_func@data data `uc  1 a 1 wreg ]
+[v store_eeprom_func@addr addr `s  1 p 2 3 ]
+"6
+[v store_eeprom_func@data data `uc  1 a 1 5 ]
+"24
+} 0
+"26 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+[v _seg_startup_anime seg_startup_anime `(v  1 e 1 0 ]
+{
+"29
+[v seg_startup_anime@i i `i  1 a 2 8 ]
+"26
+[v seg_startup_anime@times times `i  1 p 2 2 ]
+"34
+} 0
+"15 /opt/microchip/xc8/v2.41/pic/sources/c99/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 0 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 3 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 5 ]
+"53
+} 0
+"5 /opt/microchip/xc8/v2.41/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 1 ]
+[v ___awmod@counter counter `uc  1 a 1 0 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 3 ]
+[v ___awmod@dividend dividend `i  1 p 2 5 ]
+"34
+} 0
+"106 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+[v _scan_touch_key_func scan_touch_key_func `(i  1 e 2 0 ]
+{
+"120
+[v scan_touch_key_func@i i `i  1 a 2 0 ]
+"116
+[v scan_touch_key_func@port port `uc  1 a 1 6 ]
+"108
+[v scan_touch_key_func@adcres adcres `s  1 a 2 4 ]
+"109
+[v scan_touch_key_func@key key `i  1 a 2 2 ]
+"134
+} 0
+"49 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/eeprom.c
+[v _load_seg_buffer load_seg_buffer `(v  1 e 1 0 ]
+{
+"55
+} 0
+"26
+[v _load_from_eeprom_func load_from_eeprom_func `(uc  1 e 1 0 ]
+{
+[v load_from_eeprom_func@addr addr `s  1 p 2 3 ]
+"39
+} 0
+"9 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/main.c
+[v _irs_routine irs_routine `II(v  1 e 1 0 ]
+{
+"19
+} 0
+"4 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/seg_display.c
+[v _seg_display_func seg_display_func `(v  1 e 1 0 ]
+{
+"24
+} 0
+"4 /home/thyme/study/Dian/seed-class/microcontroller/ADconvert.X/scan_botton.c
+[v _scan_func scan_func `(v  1 e 1 0 ]
+{
+"48
+} 0
+"50
+[v _polling_func polling_func `(v  1 e 1 0 ]
+{
+"53
+[v polling_func@mask mask `uc  1 a 1 1 ]
+"52
+[v polling_func@w_tmp w_tmp `uc  1 a 1 0 ]
+"75
+} 0
+"99
+[v _long_click_func long_click_func `(v  1 e 1 0 ]
+{
+"104
+} 0
+"84
+[v _double_click_func double_click_func `(v  1 e 1 0 ]
+{
+"86
+[v double_click_func@pre_key pre_key `uc  1 a 1 1 ]
+"97
+} 0
+"77
+[v _single_click_func single_click_func `(v  1 e 1 0 ]
+{
+"82
+} 0

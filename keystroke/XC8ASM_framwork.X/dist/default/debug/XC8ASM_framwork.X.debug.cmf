@@ -1,0 +1,466 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$build/default/debug/keystroke.s.o
+main CODE 0 F F F1 2 1
+intentry CODE 0 4 4 B 2 1
+reset_vec CODE 0 0 0 3 2 1
+CommonVar COMMON 1 70 70 E 1 1
+config CONFIG 0 8007 8007 5 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 20-6F 1
+RAM A0-EF 1
+RAM 120-16F 1
+RAM 1A0-1EF 1
+RAM 220-26F 1
+RAM 2A0-2EF 1
+RAM 320-32F 1
+BANK0 20-6F 1
+BANK1 A0-EF 1
+BANK2 120-16F 1
+BANK3 1A0-1EF 1
+BANK4 220-26F 1
+BANK5 2A0-2EF 1
+BANK6 320-32F 1
+CONST 3-3 2
+CONST 100-FFF 2
+ENTRY 3-3 2
+ENTRY 100-FFF 2
+IDLOC 8000-8003 2
+SFR10 500-56F 1
+SFR11 580-5EF 1
+SFR12 600-66F 1
+SFR13 680-6EF 1
+SFR14 700-76F 1
+SFR15 780-7EF 1
+SFR16 800-86F 1
+SFR17 880-8EF 1
+SFR18 900-96F 1
+SFR19 980-9EF 1
+SFR20 A00-A6F 1
+SFR21 A80-AEF 1
+SFR22 B00-B6F 1
+SFR23 B80-BEF 1
+SFR24 C00-C6F 1
+SFR25 C80-CEF 1
+SFR26 D00-D6F 1
+SFR27 D80-DEF 1
+SFR28 E00-E6F 1
+SFR29 E80-EEF 1
+SFR30 F00-F6F 1
+SFR31 F80-FEF 1
+CODE 3-3 2
+CODE 100-FFF 2
+SFR0 6-7 1
+SFR4 200-21F 1
+SFR5 280-29F 1
+SFR6 300-31F 1
+SFR7 380-3EF 1
+SFR8 400-46F 1
+SFR9 480-4EF 1
+BIGRAM 2000-21EF 1
+COMMON 7E-7F 1
+EEDATA F000-F0FF 2
+STRCODE 3-3 2
+STRCODE 100-FFF 2
+STRING 3-3 2
+STRING 100-FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$build/default/debug/keystroke.s.o
+F main CODE >103:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+10 main CODE >104:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+11 main CODE >105:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+12 main CODE >106:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+13 main CODE >107:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+14 main CODE >110:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+15 main CODE >111:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+16 main CODE >112:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+17 main CODE >113:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+18 main CODE >116:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+19 main CODE >117:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+1A main CODE >118:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+1B main CODE >119:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+1C main CODE >121:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+1D main CODE >122:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+1E main CODE >123:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+1F main CODE >124:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+20 main CODE >125:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+21 main CODE >126:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+22 main CODE >129:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+23 main CODE >130:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+24 main CODE >131:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+25 main CODE >134:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+26 main CODE >135:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+27 main CODE >136:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+28 main CODE >137:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+29 main CODE >138:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+2A main CODE >139:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+2B main CODE >140:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+2C main CODE >141:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+2D main CODE >142:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+2E main CODE >143:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+2F main CODE >144:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+30 main CODE >145:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+31 main CODE >146:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+32 main CODE >147:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+33 main CODE >148:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+34 main CODE >149:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+35 main CODE >150:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+36 main CODE >151:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+37 main CODE >152:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+38 main CODE >153:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+39 main CODE >154:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+3A main CODE >155:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+3B main CODE >156:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+3C main CODE >157:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+3D main CODE >158:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+3E main CODE >159:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+3F main CODE >160:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+40 main CODE >161:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+41 main CODE >162:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+42 main CODE >163:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+43 main CODE >164:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+44 main CODE >165:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+45 main CODE >166:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+46 main CODE >167:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+47 main CODE >168:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+48 main CODE >169:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+49 main CODE >170:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+4A main CODE >171:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+4B main CODE >172:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+4C main CODE >173:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+4D main CODE >174:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+4E main CODE >175:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+4F main CODE >176:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+50 main CODE >177:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+51 main CODE >178:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+52 main CODE >179:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+53 main CODE >180:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+54 main CODE >181:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+55 main CODE >182:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+56 main CODE >183:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+57 main CODE >184:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+58 main CODE >185:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+59 main CODE >186:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+5A main CODE >187:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+5B main CODE >188:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+5C main CODE >189:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+5D main CODE >191:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+5E main CODE >192:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+5F main CODE >193:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+60 main CODE >194:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+61 main CODE >195:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+62 main CODE >196:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+63 main CODE >197:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+64 main CODE >198:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+65 main CODE >199:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+66 main CODE >200:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+67 main CODE >201:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+68 main CODE >202:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+69 main CODE >204:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+6A main CODE >205:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+6B main CODE >208:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+6C main CODE >210:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+6D main CODE >214:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+6E main CODE >215:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+6F main CODE >216:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+70 main CODE >217:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+71 main CODE >218:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+72 main CODE >219:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+73 main CODE >220:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+74 main CODE >224:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+75 main CODE >226:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+76 main CODE >227:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+77 main CODE >228:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+78 main CODE >232:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+79 main CODE >233:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+7A main CODE >234:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+7B main CODE >235:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+7C main CODE >239:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+7D main CODE >240:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+7E main CODE >241:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+7F main CODE >242:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+80 main CODE >246:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+81 main CODE >247:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+82 main CODE >248:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+83 main CODE >249:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+84 main CODE >250:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+85 main CODE >254:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+86 main CODE >255:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+87 main CODE >256:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+88 main CODE >257:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+89 main CODE >260:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+8A main CODE >261:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+8B main CODE >262:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+8C main CODE >263:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+8D main CODE >266:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+8E main CODE >267:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+8F main CODE >268:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+90 main CODE >269:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+91 main CODE >273:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+92 main CODE >274:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+93 main CODE >275:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+94 main CODE >276:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+95 main CODE >277:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+96 main CODE >279:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+97 main CODE >280:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+98 main CODE >281:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+99 main CODE >282:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+9A main CODE >283:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+9B main CODE >287:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+9C main CODE >288:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+9D main CODE >289:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+9E main CODE >290:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+9F main CODE >291:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A0 main CODE >294:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A1 main CODE >295:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A2 main CODE >296:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A3 main CODE >297:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A4 main CODE >298:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A5 main CODE >299:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A6 main CODE >304:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A7 main CODE >305:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A8 main CODE >306:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A9 main CODE >308:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+AA main CODE >309:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+AB main CODE >310:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+AC main CODE >311:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+AD main CODE >312:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+AE main CODE >317:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+AF main CODE >318:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B0 main CODE >319:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B1 main CODE >321:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B2 main CODE >322:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B3 main CODE >323:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B4 main CODE >324:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B5 main CODE >325:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B6 main CODE >330:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B7 main CODE >331:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B8 main CODE >332:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B9 main CODE >333:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+BA main CODE >335:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+BB main CODE >336:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+BC main CODE >337:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+BD main CODE >339:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+BE main CODE >340:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+BF main CODE >341:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C0 main CODE >342:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C1 main CODE >343:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C2 main CODE >348:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C3 main CODE >349:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C4 main CODE >350:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C5 main CODE >351:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C6 main CODE >352:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C7 main CODE >353:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C8 main CODE >354:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C9 main CODE >355:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+CA main CODE >358:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+CB main CODE >360:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+CC main CODE >361:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+CD main CODE >362:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+CE main CODE >363:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+CF main CODE >364:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D0 main CODE >365:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D1 main CODE >366:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D2 main CODE >367:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D3 main CODE >368:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D4 main CODE >369:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D5 main CODE >370:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D6 main CODE >371:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D7 main CODE >372:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D8 main CODE >373:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D9 main CODE >380:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+DA main CODE >384:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+DB main CODE >385:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+DC main CODE >386:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+DD main CODE >389:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+DE main CODE >390:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+DF main CODE >391:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E0 main CODE >392:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E1 main CODE >393:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E2 main CODE >394:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E3 main CODE >395:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E4 main CODE >398:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E5 main CODE >399:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E6 main CODE >401:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E7 main CODE >402:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E8 main CODE >404:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E9 main CODE >405:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+EA main CODE >406:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+EB main CODE >407:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+EC main CODE >413:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+ED main CODE >415:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+EE main CODE >416:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+EF main CODE >417:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+F0 main CODE >418:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+F1 main CODE >424:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+F2 main CODE >426:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+F3 main CODE >427:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+F4 main CODE >428:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+F5 main CODE >429:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+F6 main CODE >430:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+F7 main CODE >431:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+F8 main CODE >432:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+F9 main CODE >433:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+FA main CODE >434:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+FB main CODE >435:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+FC main CODE >436:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+FD main CODE >437:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+FE main CODE >438:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+FF main CODE >439:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+8007 config CONFIG >41:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+8008 config CONFIG >42:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+8009 config CONFIG >43:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+800A config CONFIG >44:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+800B config CONFIG >45:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+0 reset_vec CODE >49:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+4 intentry CODE >80:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+5 intentry CODE >82:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+6 intentry CODE >89:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+7 intentry CODE >84:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+8 intentry CODE >85:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+9 intentry CODE >88:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+A intentry CODE >90:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+B intentry CODE >92:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+C intentry CODE >91:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+D intentry CODE >93:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+E intentry CODE >94:/home/thyme/study/Dian/seed-class/microcontroller/keystroke/XC8ASM_framwork.X/keystroke.s.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Hspace_0 800C 0 ABS 0 - -
+__Hspace_1 7E 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Hudata_bank0 0 0 ABS 0 udata_bank0 -
+__Hudata_bank1 0 0 ABS 0 udata_bank1 -
+__Hudata_bank2 0 0 ABS 0 udata_bank2 -
+__Hudata_bank3 0 0 ABS 0 udata_bank3 -
+__Hudata_bank4 0 0 ABS 0 udata_bank4 -
+__Hudata_bank5 0 0 ABS 0 udata_bank5 -
+__Hudata_bank6 0 0 ABS 0 udata_bank6 -
+__L__absolute__ 0 0 ABS 0 __absolute__ -
+_main 1E 0 CODE 0 main build/default/debug/keystroke.s.o
+__Hpowerup 0 0 CODE 0 powerup -
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hpa_nodes0 0 0 ABS 0 pa_nodes0 -
+__Lpa_nodes0 0 0 ABS 0 pa_nodes0 -
+start_initialization 0 0 CODE 0 cinit build/default/debug/keystroke.s.o
+__Hcinit 0 0 CODE 0 cinit -
+__Hedata 0 0 ABS 0 edata -
+__Hidloc 0 0 ABS 0 idloc -
+__Hudata 0 0 ABS 0 udata -
+__Hconfig 0 0 ABS 0 config -
+__Lcinit 0 0 CODE 0 cinit -
+__Ledata 0 0 ABS 0 edata -
+__Lidloc 0 0 ABS 0 idloc -
+__Ludata 0 0 ABS 0 udata -
+__Hcode 0 0 ABS 0 code -
+__Hdata 0 0 ABS 0 data -
+__Hinit 0 0 ABS 0 init -
+__Hmain 0 0 ABS 0 main -
+__Lcode 0 0 ABS 0 code -
+__Ldata 0 0 ABS 0 data -
+__Linit 0 0 ABS 0 init -
+__Lmain 0 0 ABS 0 main -
+__S0 800C 0 ABS 0 - -
+__S1 7E 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec build/default/debug/keystroke.s.o
+__Lconfig 0 0 ABS 0 config -
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lend_init 0 0 ABS 0 end_init -
+__Hintentry 1E 0 CODE 0 intentry -
+__Hreset_vec 6 0 CODE 0 reset_vec -
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Ludata_bank0 0 0 ABS 0 udata_bank0 -
+__Ludata_bank1 0 0 ABS 0 udata_bank1 -
+__Ludata_bank2 0 0 ABS 0 udata_bank2 -
+__Ludata_bank3 0 0 ABS 0 udata_bank3 -
+__Ludata_bank4 0 0 ABS 0 udata_bank4 -
+__Ludata_bank5 0 0 ABS 0 udata_bank5 -
+__Ludata_bank6 0 0 ABS 0 udata_bank6 -
+__H__absolute__ 0 0 ABS 0 __absolute__ -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__Lfunctab 0 0 ENTRY 0 functab -
+__HCommonVar 0 0 ABS 0 CommonVar -
+__Hend_init 0 0 ABS 0 end_init -
+__Hudata_shr 0 0 ABS 0 udata_shr -
+__LCommonVar 0 0 ABS 0 CommonVar -
+__Ludata_shr 0 0 ABS 0 udata_shr -
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+intentry 0 4 8 FC 2
+reset_vec 0 0 0 3 2
+CommonVar 1 70 70 E 1
+config 0 8007 1000E 5 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

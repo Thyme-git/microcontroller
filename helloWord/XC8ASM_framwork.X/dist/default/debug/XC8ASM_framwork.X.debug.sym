@@ -1,0 +1,95 @@
+__S0 800C 0 ABS 0
+__S1 71 0 ABS 0
+__S3 0 0 ABS 0
+__Hintentry 5 0 CODE 0
+__Lintentry 4 0 CODE 0
+_main 5 0 CODE 0
+__Hudata_bank4 0 0 ABS 0
+__Ludata_bank4 0 0 ABS 0
+__HCommonVar 0 0 ABS 0
+__LCommonVar 0 0 ABS 0
+reset_vec 0 0 CODE 0
+__Hconfig 0 0 ABS 0
+__Lconfig 0 0 ABS 0
+__Hfunctab 0 0 ENTRY 0
+__Lfunctab 0 0 ENTRY 0
+__Heeprom_data 0 0 EEDATA 3
+__Leeprom_data 0 0 EEDATA 3
+__Hudata_bank5 0 0 ABS 0
+__Ludata_bank5 0 0 ABS 0
+__Hcode 0 0 ABS 0
+__Lcode 0 0 ABS 0
+__Hdata 0 0 ABS 0
+__Ldata 0 0 ABS 0
+__Hmain 0 0 ABS 0
+__Lmain 0 0 ABS 0
+__Hinit 0 0 ABS 0
+__Linit 0 0 ABS 0
+__Hudata_bank0 0 0 ABS 0
+__Ludata_bank0 0 0 ABS 0
+__Hudata_bank6 0 0 ABS 0
+__Ludata_bank6 0 0 ABS 0
+__Hpowerup 0 0 CODE 0
+__Lpowerup 0 0 CODE 0
+__Hudata_shr 0 0 ABS 0
+__Ludata_shr 0 0 ABS 0
+__H__absolute__ 0 0 ABS 0
+__L__absolute__ 0 0 ABS 0
+__Hedata 0 0 ABS 0
+__Ledata 0 0 ABS 0
+__Hudata 0 0 ABS 0
+__Ludata 0 0 ABS 0
+__Hidloc 0 0 ABS 0
+__Lidloc 0 0 ABS 0
+__Hudata_bank1 0 0 ABS 0
+__Ludata_bank1 0 0 ABS 0
+__Hspace_0 800C 0 ABS 0
+__Lspace_0 0 0 ABS 0
+__Hspace_1 71 0 ABS 0
+__Lspace_1 0 0 ABS 0
+__Hcinit 0 0 CODE 0
+__Lcinit 0 0 CODE 0
+__Hspace_3 0 0 ABS 0
+__Lspace_3 0 0 ABS 0
+__Hudata_bank2 0 0 ABS 0
+__Ludata_bank2 0 0 ABS 0
+__Hpa_nodes0 0 0 ABS 0
+__Lpa_nodes0 0 0 ABS 0
+__Hend_init 0 0 ABS 0
+__Lend_init 0 0 ABS 0
+__Hreset_vec 3 0 CODE 0
+__Lreset_vec 0 0 CODE 0
+start_initialization 0 0 CODE 0
+__Hudata_bank3 0 0 ABS 0
+__Ludata_bank3 0 0 ABS 0
+%segments
+intentry 8 29 CODE 8 0
+reset_vec 0 5 CODE 0 0
+CommonVar 70 70 COMMON 70 1
+config 1000E 10017 CONFIG 1000E 0
+%locals
+build/default/debug/helloworld.o
+helloworld.s
+34 4 0 CODE 0
+24 0 0 CODE 0
+16 8007 0 CONFIG 0
+17 8008 0 CONFIG 0
+18 8009 0 CONFIG 0
+19 800A 0 CONFIG 0
+20 800B 0 CONFIG 0
+41 5 0 CODE 0
+44 6 0 CODE 0
+45 7 0 CODE 0
+46 8 0 CODE 0
+47 9 0 CODE 0
+48 A 0 CODE 0
+51 B 0 CODE 0
+53 C 0 CODE 0
+54 D 0 CODE 0
+55 E 0 CODE 0
+58 F 0 CODE 0
+59 10 0 CODE 0
+61 11 0 CODE 0
+62 12 0 CODE 0
+63 13 0 CODE 0
+64 14 0 CODE 0

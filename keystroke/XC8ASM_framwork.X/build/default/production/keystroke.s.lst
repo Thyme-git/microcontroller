@@ -1,0 +1,473 @@
+
+
+Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
+                                                                                                           Fri Jul 14 13:59:43 2023
+
+
+     1                           	processor	16F18854
+     2                           	pagewidth 132
+     3                           	psect	udata_shr,global,class=COMMON,space=1,delta=1,noexec
+     4                           	psect	udata,global,class=RAM,space=1,delta=1,noexec
+     5                           	psect	udata_bank0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	udata_bank1,global,class=BANK1,space=1,delta=1,noexec
+     7                           	psect	udata_bank2,global,class=BANK2,space=1,delta=1,noexec
+     8                           	psect	udata_bank3,global,class=BANK3,space=1,delta=1,noexec
+     9                           	psect	udata_bank4,global,class=BANK4,space=1,delta=1,noexec
+    10                           	psect	udata_bank5,global,class=BANK5,space=1,delta=1,noexec
+    11                           	psect	udata_bank6,global,class=BANK6,space=1,delta=1,noexec
+    12                           	psect	code,global,class=CODE,delta=2
+    13                           	psect	data,global,class=STRCODE,delta=2,noexec
+    14                           	psect	edata,global,class=EEDATA,space=3,delta=2,noexec
+    15                           	psect	init,global,class=CODE,delta=2
+    16                           	psect	end_init,global,class=CODE,delta=2
+    17                           	psect	powerup,global,class=CODE,delta=2
+    18                           	psect	cinit,global,class=CODE,delta=2
+    19                           	psect	functab,global,class=ENTRY,delta=2
+    20                           	psect	idloc,global,class=IDLOC,delta=2,noexec
+    21                           	psect	eeprom_data,global,class=EEDATA,space=3,delta=2,noexec
+    22                           	psect	intentry,global,class=CODE,delta=2
+    23                           	psect	reset_vec,global,class=CODE,delta=2
+    24                           	psect	config,global,class=CONFIG,delta=2
+    25                           	psect	CommonVar,global,class=COMMON,space=1,delta=1
+    26                           	psect	main,global,class=CODE,delta=2
+    27                           	psect	pa_nodes0,global,class=CODE,delta=2
+    28     007F                     
+    29                           	psect	edata
+    30     0000                     stk_offset	set	0
+    31     0000                     auto_size	set	0
+    32                           
+    33                           ; stack_auto defines a symbol /name/_offset which equates to the
+    34                           ; stack offset of the auto object in question
+    35     0000                     
+    36                           ; stack_param defines a symbol /name/_offset which equates to the
+    37                           ; stack offset of the parameter object in question
+    38     0000                     
+    39                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    40                           ; it also links in to the btemp symbol so that can be used
+    41     0000                     
+    42                           ; restore_stack adjusts the SP to remove all auto and parameter
+    43                           ; objects from the stack prior to returning from a function
+    44     0000                     
+    45                           	psect	cinit
+    46     0000                     start_initialization:
+    47                           
+    48                           	psect	intentry
+    49                           
+    50                           ; (index+1)
+    51                           
+    52                           ;========================CommonVar===========================================
+    53                           ;========================intentry============================================
+    54     0004  20D9               	call	seg_display_func
+    55     0005  2074               	call	scan_func
+    56     0006  30FE               	movlw	254
+    57     0007  002E               	banksel	1804
+    58     0008  128C               	bcf	1804,5	; clear timer0 interupt bit
+    59                           
+    60                           ; reset counter
+    61     0009  0020               	banksel	29
+    62     000A  009D               	movwf	29
+    63     000B  30AF               	movlw	175
+    64     000C  0020               	banksel	28
+    65     000D  009C               	movwf	28
+    66     000E  0009               	retfie	; PIC10/12/16
+    67                           
+    68                           	psect	reset_vec
+    69     0000                     reset_vec:
+    70     0000  3180  280F  3180   	ljmp	_main
+    71                           
+    72                           	psect	config
+    73     8007  DFEC               	dw	57324
+    74     8008  F7FF               	dw	63487
+    75     8009  FFBF               	dw	65471
+    76     800A  EFFE               	dw	61438
+    77     800B  FFFF               	dw	65535
+    78                           
+    79                           	psect	CommonVar
+    80     0070                     seg_buffer:	
+    81                           ;========================CommonVar===========================================
+    82                           
+    83     0070                     	ds	4	; encoded number for display at 0xf0
+    84     0074                     seg_idx:
+    85     0074                     	ds	1	; index for seg_buffer at 0xf4
+    86     0075                     w_tmp:
+    87     0075                     	ds	1	; temperary variable for storing value of WREG
+    88     0076                     seg_flash:
+    89     0076                     	ds	1	; 0000 0001 means that flash seg0
+    90     0077                     curr_key:	
+    91                           ; for polling
+    92                           
+    93     0077                     	ds	1	; current key input from keyboard 0xfa
+    94     0078                     mask:
+    95     0078                     	ds	1	; mask for polling
+    96     0079                     pcnt:	
+    97                           ;for key scanning
+    98                           
+    99     0079                     	ds	1	; pressed time counter at 0xfc
+   100     007A                     rcnt:
+   101     007A                     	ds	1	; released time counter at 0xfd
+   102     007B                     key_buffer:
+   103     007B                     	ds	1	; store curr-key in bit<3:0>, pre-key in bit<7:4>
+   104     007C                     delay_tmp:
+   105     007C                     	ds	2	;
+   106                           
+   107                           	psect	main
+   108     000F                     _main:	
+   109                           ;========================intentry============================================
+   110                           ;========================_main==============================================
+   111                           
+   112                           
+   113                           ;weak pull up for portA
+   114     000F  003E               	banksel	3897
+   115     0010  01B9               	clrf	3897
+   116     0011  09B9               	comf	3897,f	; WPUA <- 0xff
+   117     0012  003E               	banksel	3896
+   118     0013  01B8               	clrf	3896	; ANSELA <- 0x00
+   119                           
+   120                           ;segment config
+   121     0014  0020               	banksel	18
+   122     0015  0192               	clrf	18	; port b as output
+   123     0016  0020               	banksel	19
+   124     0017  0193               	clrf	19	; port c as negtive pole
+   125                           
+   126                           ; interupt config
+   127     0018  0020               	banksel	11
+   128     0019  178B               	bsf	11,7	;enable general interupt
+   129     001A  002E               	banksel	1814
+   130     001B  1696               	bsf	22,5	; enable Timer0 interupt
+   131                           
+   132                           ;TIMER0 config
+   133     001C  0020               	banksel	30
+   134     001D  3090               	movlw	144	;16-bit mode
+   135     001E  009E               	movwf	30
+   136     001F  0020               	banksel	31
+   137     0020  3050               	movlw	80	;use FOSC/4 as input: prescale 1:1
+   138     0021  009F               	movwf	31
+   139                           
+   140                           ; conter initialize
+   141     0022  01FA               	clrf	rcnt
+   142     0023  09FA               	comf	rcnt,f	; rcnt <- 255
+   143     0024  01F9               	clrf	pcnt	; pcnt <- 0
+   144                           
+   145                           ; startup anime
+   146     0025  3008               	movlw	8
+   147     0026  20F1               	call	_table_encoded
+   148     0027  00F0               	movwf	seg_buffer
+   149     0028  01F1               	clrf	seg_buffer+1
+   150     0029  01F2               	clrf	seg_buffer+2
+   151     002A  01F3               	clrf	seg_buffer+3
+   152     002B  206D               	call	delay
+   153     002C  3008               	movlw	8
+   154     002D  20F1               	call	_table_encoded
+   155     002E  00F1               	movwf	seg_buffer+1
+   156     002F  01F0               	clrf	seg_buffer
+   157     0030  01F2               	clrf	seg_buffer+2
+   158     0031  01F3               	clrf	seg_buffer+3
+   159     0032  206D               	call	delay
+   160     0033  3008               	movlw	8
+   161     0034  20F1               	call	_table_encoded
+   162     0035  00F2               	movwf	seg_buffer+2
+   163     0036  01F1               	clrf	seg_buffer+1
+   164     0037  01F0               	clrf	seg_buffer
+   165     0038  01F3               	clrf	seg_buffer+3
+   166     0039  206D               	call	delay
+   167     003A  3008               	movlw	8
+   168     003B  20F1               	call	_table_encoded
+   169     003C  00F3               	movwf	seg_buffer+3
+   170     003D  01F1               	clrf	seg_buffer+1
+   171     003E  01F2               	clrf	seg_buffer+2
+   172     003F  01F0               	clrf	seg_buffer
+   173     0040  206D               	call	delay
+   174     0041  3008               	movlw	8
+   175     0042  20F1               	call	_table_encoded
+   176     0043  00F0               	movwf	seg_buffer
+   177     0044  01F1               	clrf	seg_buffer+1
+   178     0045  01F2               	clrf	seg_buffer+2
+   179     0046  01F3               	clrf	seg_buffer+3
+   180     0047  206D               	call	delay
+   181     0048  3008               	movlw	8
+   182     0049  20F1               	call	_table_encoded
+   183     004A  00F1               	movwf	seg_buffer+1
+   184     004B  01F0               	clrf	seg_buffer
+   185     004C  01F2               	clrf	seg_buffer+2
+   186     004D  01F3               	clrf	seg_buffer+3
+   187     004E  206D               	call	delay
+   188     004F  3008               	movlw	8
+   189     0050  20F1               	call	_table_encoded
+   190     0051  00F2               	movwf	seg_buffer+2
+   191     0052  01F1               	clrf	seg_buffer+1
+   192     0053  01F0               	clrf	seg_buffer
+   193     0054  01F3               	clrf	seg_buffer+3
+   194     0055  206D               	call	delay
+   195     0056  3008               	movlw	8
+   196     0057  20F1               	call	_table_encoded
+   197     0058  00F3               	movwf	seg_buffer+3
+   198     0059  01F1               	clrf	seg_buffer+1
+   199     005A  01F2               	clrf	seg_buffer+2
+   200     005B  01F0               	clrf	seg_buffer
+   201     005C  206D               	call	delay
+   202     005D  3000               	movlw	0
+   203     005E  20F1               	call	_table_encoded
+   204     005F  00F0               	movwf	seg_buffer
+   205     0060  3000               	movlw	0
+   206     0061  20F1               	call	_table_encoded
+   207     0062  00F1               	movwf	seg_buffer+1
+   208     0063  3000               	movlw	0
+   209     0064  20F1               	call	_table_encoded
+   210     0065  00F2               	movwf	seg_buffer+2
+   211     0066  3000               	movlw	0
+   212     0067  20F1               	call	_table_encoded
+   213     0068  00F3               	movwf	seg_buffer+3
+   214     0069  3010               	movlw	16
+   215     006A  00F6               	movwf	seg_flash	;
+   216     006B                     main_loop:
+   217     006B  286B               	goto	main_loop
+   218     006C  2900               	goto	_exit
+   219     006D                     delay:	
+   220                           ;========================_main==============================================
+   221                           
+   222     006D  0BFC               	decfsz	delay_tmp,f
+   223     006E  286D               	goto	delay
+   224     006F  0BFD               	decfsz	delay_tmp+1,f
+   225     0070  286D               	goto	delay
+   226     0071  300F               	movlw	15
+   227     0072  00FD               	movwf	delay_tmp+1
+   228     0073  0008               	return
+   229     0074                     scan_func:	
+   230                           ;========================scan_func==========================================
+   231                           
+   232     0074  20C2               	call	polling_func	; store current key in curr_key, store 0 if no key
+   233     0075  0877               	movf	curr_key,w	;
+   234     0076  1D03               	btfss	3,2	; if curr_key == 0, skip
+   235     0077  2885               	goto	pressed	; if curr_key != 0
+   236     0078                     released:
+   237                           
+   238                           ; if (r == 64) call single_click_func
+   239     0078  3080               	movlw	128	;
+   240     0079  027A               	subwf	rcnt,w	;
+   241     007A  1903               	btfsc	3,2	; if rcnt != 128, skip
+   242     007B  20A6               	call	single_click_func	;
+   243                           
+   244                           ; goto released_end
+   245                           ; if (r > 3) p = 0
+   246     007C  30FC               	movlw	252
+   247     007D  057A               	andwf	rcnt,w	;
+   248     007E  1D03               	btfss	3,2	; if rcnt <= 3, skip
+   249     007F  01F9               	clrf	pcnt	; if (rcnt > 2) pcnt = 0
+   250     0080                     released_end:
+   251                           
+   252                           ; if (r != 255) r++
+   253     0080  30FF               	movlw	255
+   254     0081  067A               	xorwf	rcnt,w	;w <- rcnt ^ 255
+   255     0082  1D03               	btfss	3,2	; if rcnt == 255, skip
+   256     0083  0AFA               	incf	rcnt,f	;
+   257     0084  0008               	return
+   258     0085                     pressed:
+   259                           
+   260                           ; if p == 200 then call long_click_func, r = 64
+   261     0085  30C8               	movlw	200
+   262     0086  0679               	xorwf	pcnt,w	; w <- 200 ^ pcnt
+   263     0087  1D03               	btfss	3,2	; if pcnt == 200, skip
+   264     0088  288D               	goto	scan_func_L1	;if pcnt != 200
+   265                           
+   266                           ;if pcnt == 200
+   267     0089  20AE               	call	long_click_func
+   268     008A  3081               	movlw	129
+   269     008B  00FA               	movwf	rcnt	; r = 65
+   270     008C  289B               	goto	pressed_end
+   271     008D                     scan_func_L1:
+   272     008D  3002               	movlw	2
+   273     008E  0679               	xorwf	pcnt,w	; w <- 2 ^ pcnt
+   274     008F  1D03               	btfss	3,2	; if pcnt == 2, skip
+   275     0090  289B               	goto	pressed_end	; if pcnt != 2
+   276                           
+   277                           ; if pcnt == 2
+   278                           ; curr_key -> key_buffer, press comfirmed
+   279     0091  0EFB               	swapf	key_buffer,f	; swap curr-key and pre-key
+   280     0092  30F0               	movlw	240	; w <- 11110000B
+   281     0093  05FB               	andwf	key_buffer,f	; clear to store curr-key
+   282     0094  0877               	movf	curr_key,w	;
+   283     0095  06FB               	xorwf	key_buffer,f	; curr_key<3:0> -> key_buffer<3:0>
+   284                           
+   285                           ; if r < 64:
+   286     0096  3080               	movlw	128
+   287     0097  057A               	andwf	rcnt,w	; w <- ~63 & rcnt
+   288     0098  1903               	btfsc	3,2	; if rcnt > 63, skip
+   289     0099  28A0               	goto	scan_func_L2	; if (rcnt <= 63)
+   290     009A  01FA               	clrf	rcnt	; rcnt = 0
+   291     009B                     pressed_end:
+   292                           
+   293                           ; if (p != 255) p++
+   294     009B  30FF               	movlw	255
+   295     009C  0679               	xorwf	pcnt,w	;w <- pcnt ^ 255
+   296     009D  1D03               	btfss	3,2	; if pcnt == 255, skip
+   297     009E  0AF9               	incf	pcnt,f	;
+   298     009F  0008               	return
+   299     00A0                     scan_func_L2:
+   300     00A0  20B6               	call	double_click_func	;
+   301     00A1  3081               	movlw	129	;
+   302     00A2  00FA               	movwf	rcnt	; r = 65
+   303     00A3  30C9               	movlw	201	;
+   304     00A4  00F9               	movwf	pcnt	; p = 201
+   305     00A5  0008               	return
+   306     00A6                     single_click_func:	
+   307                           ;========================scan_func==========================================
+   308                           ;========================single_click_func==================================
+   309                           
+   310     00A6  300B               	movlw	11
+   311     00A7  20F1               	call	_table_encoded
+   312     00A8  00F3               	movwf	seg_buffer+3
+   313     00A9  087B               	movf	key_buffer,w	;
+   314     00AA  390F               	andlw	15	; w <- key_buffer & 00001111B
+   315     00AB  20F1               	call	_table_encoded	; w <- encode(w)
+   316     00AC  00F0               	movwf	seg_buffer	; seg_buffer[0] <- w
+   317     00AD  0008               	return
+   318     00AE                     long_click_func:	
+   319                           ;========================single_click_func==================================
+   320                           ;========================long_click_func====================================
+   321                           
+   322     00AE  300C               	movlw	12
+   323     00AF  20F1               	call	_table_encoded
+   324     00B0  00F3               	movwf	seg_buffer+3
+   325     00B1  087B               	movf	key_buffer,w	;
+   326     00B2  390F               	andlw	15	; w <- key_buffer & 00001111B
+   327     00B3  20F1               	call	_table_encoded	; w <- encode(w)
+   328     00B4  00F1               	movwf	seg_buffer+1	; seg_buffer[1] <- w
+   329     00B5  0008               	return
+   330     00B6                     double_click_func:	
+   331                           ;========================long_click_func====================================
+   332                           ;========================double_click_func==================================
+   333                           
+   334     00B6  0E7B               	swapf	key_buffer,w	;
+   335     00B7  067B               	xorwf	key_buffer,w	; w <- key_buffer<7:4, 3:0> ^ key_buffer<3:0, 7:4>
+   336     00B8  1D03               	btfss	3,2	; if z!=0(key_buffer<7:4, 3:0> == key_buffer<3:0, 7:4>), skip
+   337     00B9  28A6               	goto	single_click_func	; if (key_buffer<7:4, 3:0> == key_buffer<3:0, 7:4>)
+   338     00BA  300D               	movlw	13
+   339     00BB  20F1               	call	_table_encoded
+   340     00BC  00F3               	movwf	seg_buffer+3
+   341     00BD  087B               	movf	key_buffer,w	;
+   342     00BE  390F               	andlw	15	; w <- key_buffer & 00001111B
+   343     00BF  20F1               	call	_table_encoded	; w <- encode(w)
+   344     00C0  00F2               	movwf	seg_buffer+2	; seg_buffer[2] <- w
+   345     00C1  0008               	return
+   346     00C2                     polling_func:	
+   347                           ;========================double_click_func==================================
+   348                           ;========================polling_func=======================================
+   349                           
+   350                           
+   351                           ;return pressed key in curr_key, curr_key is zero if no key is pressed
+   352     00C2  300A               	movlw	10
+   353     00C3  00F7               	movwf	curr_key	; curr_key <- 10
+   354     00C4  0020               	banksel	17
+   355     00C5  300F               	movlw	15
+   356     00C6  0091               	movwf	17	; TRISA <- 0x0f
+   357     00C7  018C               	clrf	12	; PORTA <- 0x00; set output low
+   358     00C8  3008               	movlw	8
+   359     00C9  00F8               	movwf	mask	; mask <- 0x08
+   360     00CA                     POLLING_L1:	
+   361                           ; check if curr_key is pressed
+   362                           
+   363     00CA  0878               	movf	mask,w	; w <- mask
+   364     00CB                     POLLING_L2:
+   365     00CB  00F5               	movwf	w_tmp	; w_tmp <- w
+   366     00CC  050C               	andwf	12,w	; w <- w & PORTA
+   367     00CD  1903               	btfsc	3,2	; if w != 0 then skip
+   368     00CE  0008               	return
+   369     00CF  03F7               	decf	curr_key,f	; curr_key <- curr_key-1
+   370     00D0  3675               	lsrf	w_tmp,w	; w <- w_tmp >> 1
+   371     00D1  1D03               	btfss	3,2	; if w == 0 then skip
+   372     00D2  28CB               	goto	POLLING_L2
+   373     00D3  0020               	banksel	17
+   374     00D4  3691               	lsrf	17,f	; TRISA <- TRISA >> 1
+   375     00D5  36F8               	lsrf	mask,f	; mask <- mask >> 1
+   376     00D6  1D03               	btfss	3,2	; if mask == 0 then skip
+   377     00D7  28CA               	goto	POLLING_L1
+   378     00D8  0008               	return
+   379     00D9                     seg_display_func:	
+   380                           ;========================polling_func=======================================
+   381                           ;========================seg_display_func===================================
+   382                           
+   383                           
+   384                           ;display seg_buffer[seg_idx%4] in segment
+   385     00D9  03F4               	decf	seg_idx,f
+   386                           
+   387                           ; disable negtive pole before write postive pole,
+   388                           ; ortherwise there will be blurry light leaving in segment
+   389     00DA  0020               	banksel	24
+   390     00DB  0198               	clrf	24
+   391     00DC  0998               	comf	24,f
+   392                           
+   393                           ; write postive pole
+   394     00DD  0874               	movf	seg_idx,w	; w <- seg_idx (range from 0 to 255)
+   395     00DE  3903               	andlw	3	; w <- seg_idx % 4
+   396     00DF  3E70               	addlw	seg_buffer	; w <- seg_buffer + seg_idx % 4
+   397     00E0  0084               	movwf	4	; FSR0L <- seg_buffer + seg_idx % 4
+   398     00E1  0020               	banksel	23
+   399     00E2  0800               	movf	0,w	; w <- seg_buffer[seg_idx%4]
+   400     00E3  0097               	movwf	23	; w -> LATB
+   401                           
+   402                           ; write negtive pole
+   403     00E4  0874               	movf	seg_idx,w	; w <- seg_idx (range from 0 to 255)
+   404     00E5  3903               	andlw	3	; w <- seg_idx % 4
+   405     00E6  20EC               	call	_table_seg_select	; w < _table_select[seg_idx%4]
+   406     00E7  0098               	movwf	24	; LATC <- seg_select[seg_idx%4]
+   407     00E8  0876               	movf	seg_flash,w
+   408     00E9  1BF4               	btfsc	seg_idx,7
+   409     00EA  0498               	iorwf	24,f	; flash, if seg_flash[i] == 1, then LATC[i] will be set as 1
+   410     00EB  0008               	return
+   411     00EC                     _table_seg_select:	
+   412                           ;========================seg_display_func===================================
+   413                           ;========================_table_seg_select==================================
+   414                           
+   415     00EC  0782               	addwf	2,f	;add offset to pc to
+   416                           
+   417                           ;generate a computed goto
+   418     00ED  34FD               	retlw	253
+   419     00EE  34FB               	retlw	251
+   420     00EF  34F7               	retlw	247
+   421     00F0  34EF               	retlw	239
+   422     00F1                     _table_encoded:	
+   423                           ;========================_table_seg_select==================================
+   424                           ;========================_table_encoded=====================================
+   425                           
+   426     00F1  0782               	addwf	2,f	;add offset to pc to
+   427                           
+   428                           ;generate a computed goto
+   429     00F2  34EB               	retlw	235	; 0
+   430     00F3  3428               	retlw	40	; 1
+   431     00F4  34B3               	retlw	179	; 2
+   432     00F5  34BA               	retlw	186	; 3
+   433     00F6  3478               	retlw	120	; 4
+   434     00F7  34DA               	retlw	218	; 5
+   435     00F8  34DB               	retlw	219	; 6
+   436     00F9  34A8               	retlw	168	; 7
+   437     00FA  34FB               	retlw	251	; 8
+   438     00FB  34FA               	retlw	250	; 9
+   439     00FC  34F9               	retlw	249	; A
+   440     00FD  34DE               	retlw	222	; s
+   441     00FE  3443               	retlw	67	; l
+   442     00FF  343B               	retlw	59	; d
+   443     0100                     _exit:	
+   444                           ;========================_table_encoded====================================
+   445                           
+
+
+Microchip Technology PIC Macro Assembler V2.41 build 20230208172133 
+Symbol Table                                                                                               Fri Jul 14 13:59:43 2023
+
+                             PCL 0002                              LATB 0017                              LATC 0018  
+                            PIE0 0716                              PIR0 070C                              WPUA 0F39  
+                            mask 0078                              pcnt 0079                              rcnt 007A  
+                           INDF0 0000                             FSR0L 0004                             TMR0H 001D  
+                           TMR0L 001C                             PORTA 000C                             TRISA 0011  
+                           TRISB 0012                             TRISC 0013                             _main 000F  
+                           _exit 0100                             delay 006D                             w_tmp 0075  
+                          ANSELA 0F38                            T0CON0 001E                            T0CON1 001F  
+                          INTCON 000B                            STATUS 0003                  seg_display_func 00D9  
+                         seg_idx 0074                           pressed 0085                 single_click_func 00A6  
+                    scan_func_L1 008D                      scan_func_L2 00A0                        POLLING_L1 00CA  
+                      POLLING_L2 00CB                      released_end 0080                    _table_encoded 00F1  
+                        curr_key 0077                          released 0078                 _table_seg_select 00EC  
+                    polling_func 00C2                 double_click_func 00B6                   long_click_func 00AE  
+            start_initialization 0000                       pressed_end 009B                        key_buffer 007B  
+                      seg_buffer 0070                         delay_tmp 007C                         main_loop 006B  
+                       scan_func 0074                         seg_flash 0076                         reset_vec 0000  

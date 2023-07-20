@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.m": "matlab",
+        "seg_display.h": "c",
+        "eeprom.h": "c",
+        "eusart.h": "c"
+    }
+}
